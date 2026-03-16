@@ -80,25 +80,6 @@ export default function Education() {
                         <p className="text-xs text-muted-foreground">/ 4.0</p>
                       </div>
                     )}
-                    {edu.cgpa && (
-                      <div className="glass-card rounded-lg p-4 text-center min-w-[120px]">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <Award className="w-4 h-4 text-purple-500" />
-                          <p className="text-xs text-muted-foreground font-semibold">CGPA</p>
-                        </div>
-                        <p className="text-2xl font-bold text-gradient">{edu.cgpa}</p>
-                        <p className="text-xs text-muted-foreground">/ 10.0</p>
-                      </div>
-                    )}
-                    {edu.grade && (
-                      <div className="glass-card rounded-lg p-4 text-center min-w-[120px]">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <Award className="w-4 h-4 text-pink-500" />
-                          <p className="text-xs text-muted-foreground font-semibold">Grade</p>
-                        </div>
-                        <p className="text-2xl font-bold text-gradient">{edu.grade}</p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>

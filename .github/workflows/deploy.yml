@@ -1,0 +1,40 @@
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Configure Docker for GCP
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
+
+      - name: Build Docker image
+        run: |
+          docker build -t us-central1-docker.pkg.dev/portfolio-website-490407/portfolio-repo/website:latest .
+
+      - name: Push Docker image
+        run: |
+          docker push us-central1-docker.pkg.dev/portfolio-website-490407/portfolio-repo/website:latest
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy portfolio-website \
+            --image us-central1-docker.pkg.dev/portfolio-website-490407/portfolio-repo/website:latest \
+            --platform managed \
+            --region us-central1 \
+            --allow-unauthenticated \
+            --port 3000 \
+            --project portfolio-website-490407

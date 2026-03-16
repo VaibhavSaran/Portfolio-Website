@@ -38,3 +38,6 @@ prompt/*
 
 #Ignoring claude
 .claude/*
+
+#Ignore Keys
+github-actions-key.json

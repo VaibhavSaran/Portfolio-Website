@@ -183,7 +183,7 @@ export const resumeData = {
       links: {
         demoVideo: "https://www.youtube.com/watch?v=Sna3q-Jr_jA",
         github: "https://github.com/VaibhavSaran/Optimizing-Sepsis-Treatment-with-RL",
-        paperPdf: "https://drive.google.com/file/d/1lqb1-T1kw78gndmwyDJLVqYBtIMcU4eP/view?usp=sharing"
+        paperPdf: "https://arxiv.org/pdf/2601.14228"
       },
       contributors: [
         { name: "Punit Kumar (Lead Author)", github: "https://github.com/punit121", linkedin: "https://www.linkedin.com/in/punit121/" },

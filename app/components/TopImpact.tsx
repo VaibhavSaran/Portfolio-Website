@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, ExternalLink } from "lucide-react";
+import { Award, Linkedin } from "lucide-react";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -74,7 +74,7 @@ export default function TopImpact() {
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                       {impact.link && (
-                        <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-indigo-500 transition-colors" />
+                        <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-[#0A66C2] transition-colors" />
                       )}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{impact.title}</h3>

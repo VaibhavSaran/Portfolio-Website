@@ -66,7 +66,7 @@ export default function Hero() {
             </button>
 
             <a
-              href="https://drive.google.com/file/d/1jdCKQW9wef05HyWLVswdDr3XWI640ndG/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Yp3S1QVjm_0LfZhwF8eWqQkuB6qK2_XC/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group px-8 py-4 glass-card rounded-lg font-semibold text-lg hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105 border-2 border-white/20"
@@ -109,6 +109,17 @@ export default function Hero() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="https://scholar.google.com/citations?user=cF7cswgAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 glass-card rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30"
+              aria-label="Google Scholar"
+            >
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5h3.5v8C3.5 19.5 5 21 7 21h10c2 0 3.5-1.5 3.5-3.5v-8H24L12 0z"/>
+              </svg>
             </a>
           </motion.div>
         </motion.div>

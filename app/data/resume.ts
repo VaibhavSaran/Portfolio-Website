@@ -145,7 +145,7 @@ export const resumeData = {
       ],
       skills: ["LangGraph", "LangChain", "Apache Airflow", "ChromaDB", "PostgreSQL", "Docker", "AWS EC2", "Nginx", "GitHub Actions"],
       links: {
-        liveDemo: "https://3.209.133.64/",
+        liveDemo: "https://stockpilot.vaibhavsaran.com/",
         github: "https://github.com/VaibhavSaran/Stock-Pilot-AI"
       },
       contributors: null

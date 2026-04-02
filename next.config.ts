@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/StockPilotAI',
-        destination: 'https://3.209.133.64/',
+        destination: 'https://stockpilot.vaibhavsaran.com/',
         permanent: false,
       },
       {

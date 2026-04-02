@@ -6,6 +6,20 @@ const nextConfig: NextConfig = {
   images: {
     domains: [],
   },
+  async redirects() {
+    return [
+      {
+        source: '/StockPilotAI',
+        destination: 'https://3.209.133.64/',
+        permanent: false,
+      },
+      {
+        source: '/F1PrimusAI',
+        destination: 'https://f1-primus-ai-214856382722.us-central1.run.app/',
+        permanent: false,
+      },
+    ]
+  },
 };
 
 export default nextConfig;

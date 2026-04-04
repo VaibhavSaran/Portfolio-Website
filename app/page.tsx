@@ -4,23 +4,24 @@ import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import AnimatedBackground from "./components/AnimatedBackground";
 import SplashScreen from "./components/SplashScreen";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TopImpact from "./components/TopImpact";
 import Experience from "./components/Experience";
-import Achievements from "./components/Achievements";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Achievements from "./components/Achievements";
+import Testimonials from "./components/Testimonials";
 import Additional from "./components/Additional";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ThemeToggle from "./components/ThemeToggle";
 import ScrollProgress from "./components/ScrollProgress";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    // Prevent scroll during splash
     if (showSplash) {
       document.body.style.overflow = "hidden";
     } else {
@@ -37,7 +38,7 @@ export default function Home() {
           <SplashScreen key="splash" onComplete={() => setShowSplash(false)} />
         ) : (
           <>
-            <ThemeToggle />
+            <Navbar />
             <ScrollProgress />
 
             <div id="hero">
@@ -67,6 +68,14 @@ export default function Home() {
             </div>
 
             <Additional />
+
+            <div id="testimonials">
+              <Testimonials />
+            </div>
+
+            <div id="contact">
+              <Contact />
+            </div>
 
             <Footer />
           </>

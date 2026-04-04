@@ -36,11 +36,11 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Experience</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+            Experience
           </h2>
           <p className="text-lg text-muted-foreground">
-            1.5+ years of industry experience in Data Science and AI Research
+            2+ years of experience in AI Engineering, Production ML, and Research
           </p>
         </motion.div>
 
@@ -48,9 +48,9 @@ export default function Experience() {
           {/* Timeline line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 opacity-30" />
 
-          {/* Experience items */}
+          {/* Experience items — only show substantive roles (Research Assistant + Data Scientist) */}
           <div className="space-y-8">
-            {resumeData.experience.map((exp, index) => {
+            {resumeData.experience.slice(0, 2).map((exp, index) => {
               const isExpanded = expandedIndex === index;
               const metrics = extractMetrics(exp.bullets);
               const isLeft = index % 2 === 0;

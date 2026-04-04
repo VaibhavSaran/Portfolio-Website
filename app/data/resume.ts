@@ -1,8 +1,8 @@
 export const resumeData = {
   basics: {
     name: "Vaibhav Saran",
-    title: "Graduate Student in AI | UB '26 | 1.5+ Years Data Science Experience | Deep Learning & Gen AI",
-    summary: "MS in Artificial Intelligence graduate from SUNY Buffalo (Dec 2025) actively seeking full-time opportunities in Generative AI, ML Engineering, and Data Science roles. I bring 1.5+ years of industry experience as a Data Scientist at Innomatics Research Labs. My approach combines hands-on engineering with research rigor. I have published research on attention-based offline reinforcement learning for sepsis treatment optimization (IEEE ICMLA 2025) and contributed to Green AI Labs, developing automated profiling systems to reduce AI computational costs and carbon footprint. My technical expertise spans Deep Learning and Generative AI (transformers, LLMs, diffusion models), Production ML pipelines (Apache Airflow, Docker, CI/CD), Cloud platforms (AWS EC2, GCP), and end-to-end ML development from research to deployment. Open to roles where I can leverage my research background and production ML experience to build scalable AI solutions.",
+    title: "Agentic AI Engineer · LLM Systems · Production ML · IEEE ICMLA 2025",
+    summary: "MS in Artificial Intelligence from SUNY Buffalo (Dec 2025). Published research on attention-based offline RL for sepsis treatment (IEEE ICMLA 2025). Building production LLM and multi-agent AI systems from research to deployment.",
     location: "Buffalo, New York, United States",
     email: "vaibhavsaran8@gmail.com",
     phone: null,
@@ -168,13 +168,26 @@ export const resumeData = {
       contributors: null
     },
     {
+      title: "Job Search Automation Pipeline",
+      dates: "March 2026 – Present",
+      associated: null,
+      bullets: [
+        "Built a live n8n automation workflow that scrapes LinkedIn, Indeed, and Glassdoor daily using an Apify actor, scoring each job posting via the Claude API (claude-sonnet-4-6) for fit against a target profile.",
+        "High-match roles are automatically routed to a dedicated Google Sheets tab with AI-generated fit scores and reasoning — eliminating manual job discovery entirely.",
+        "Stack: n8n (self-hosted), Apify, Claude API, Google Sheets API"
+      ],
+      skills: ["n8n", "Claude API", "Apify", "Google Sheets", "Automation"],
+      links: {},
+      contributors: null
+    },
+    {
       title: "Optimizing Sepsis Treatment With Reinforcement Learning",
       dates: "February 2025 - May 2025",
       associated: "University at Buffalo",
       award: "3rd Place — CSE Demo Days, SUNY Buffalo",
       publication: "Accepted at IEEE ICMLA 2025 — \"Attention-Based Offline Reinforcement Learning and Clustering for Interpretable Sepsis Treatment\"",
       bullets: [
-        "Built an interpretable sepsis treatment framework using offline RL with custom attention and LLaMA-3.2 for interpretation of actions, achieving 83% accuracy on ICU dataset comprising MIMIC-III and e-ICU datasets.",
+        "Built an interpretable sepsis treatment framework using offline RL with custom attention and LLaMA-3.2 for interpretation of actions, achieving 83% accuracy on MIMIC-III and e-ICU via a novel attention-based offline RL approach.",
         "Deployed the complete framework in a secure local environment using Streamlit for UI, ensuring patient data privacy and compliance for clinical AI applications.",
         "Implemented a clustering-driven risk stratification pipeline using HDBSCAN with UMAP, generating 124 clusters from ICU data and consolidating them into 3 clinically meaningful mortality-based risk categories (low, intermediate, high), effectively addressing the cold-start problem for new admissions.",
         "Research contribution: synthetic data augmentation using VAE and diffusion models to address data sparsity in critical interventions. AWR-based agent with attention mechanisms for personalized treatment recommendations. LLM-based rationale generation providing clinicians with natural-language explanations."
@@ -245,21 +258,22 @@ export const resumeData = {
       context: "Including object detection, image classification, and sentiment analysis for learners across 7 countries"
     },
     {
-      type: "award",
-      title: "5 star Trainee — CipherSchools",
-      context: "One of the top performers in a 45-day intensive training program on Machine Learning, awarded 5 stars for exceptional project work and understanding of ML concepts."
+      type: "research",
+      title: "Green CRISP-ML(Q)",
+      context: "Developed comprehensive environmental profiling framework for sustainable AI development, reducing computational costs and carbon footprint in ML workflows.",
+      link: "https://drive.google.com/file/d/1ppyDC72qR3O5KgLZyQszFwrJ1i0rE3lx/view?usp=sharing"
+    },
+    {
+      type: "project",
+      title: "5,000+ Articles · StockPilot AI",
+      context: "Indexed 5,000+ real-time financial news articles across 7 stock tickers using ChromaDB vector store and Apache Airflow DAGs — deployed live on AWS EC2.",
+      liveDemo: "http://3.209.133.64"
     },
     {
       type: "project",
       title: "Hand Sign Detection",
       context: "Built an object detection system that detects hand signs and gives the meaning of sign as text in real time, enabling communication for mute individuals. Implemented using TensorFlow Object Detection.",
       github: "https://github.com/VaibhavSaran/Hand-Sign-Detection-with-Tensorflow-Object-Detection"
-    },
-    {
-      type: "research",
-      title: "Green CRISP-ML(Q)",
-      context: "Developed comprehensive environmental profiling framework for sustainable AI development, reducing computational costs and carbon footprint in ML workflows.",
-      link: "https://drive.google.com/file/d/1ppyDC72qR3O5KgLZyQszFwrJ1i0rE3lx/view?usp=sharing"
     }
   ],
   skills: {
@@ -287,22 +301,12 @@ export const resumeData = {
     },
     {
       institution: "JIET Group of Institutions",
-      degree: "Bachelor's Degree",
+      degree: "B.Tech in Computer Science",
       dates: "2018-2022",
       gpa: "3.64",
       highlights: [
-        "Participated in Resonance 2019 as anchor and participant in enigmatic hunting, secured 2nd position",
-        "Selected as best boy for batch 2018-2022"
-      ]
-    },
-    {
-      institution: "Delhi Public School",
-      degree: "High School",
-      gpa: "3.7",
-      highlights: [
-        "Won inter-house maths quiz",
-        "2nd position in English poem recitation (duo inter-house)",
-        "Studied Mathematics, Physics, Chemistry, Computer Science (C++) and English"
+        "Began open-source contributions via Hacktoberfest, successfully merging pull requests across Python, C++, and Machine Learning repositories — marking the start of a consistent engineering practice.",
+        "Built a real-time Hand Sign Detection system using TensorFlow Object Detection API that captions hand signs as text, enabling communication for mute individuals — submitted as final major project."
       ]
     }
   ],

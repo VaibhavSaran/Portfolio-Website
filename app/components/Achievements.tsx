@@ -80,8 +80,8 @@ export default function Achievements() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Achievements</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+            Achievements
           </h2>
           <p className="text-lg text-muted-foreground">
             Recognition and impact across research, mentorship, and open source
@@ -181,6 +181,20 @@ export default function Achievements() {
                         >
                           <Github className="w-4 h-4" />
                           GitHub
+                        </a>
+                      </div>
+                    )}
+
+                    {achievement.liveDemo && (
+                      <div className="pt-3">
+                        <a
+                          href={achievement.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 hover:from-indigo-500/20 hover:to-purple-500/20 hover:border-indigo-500/50 transition-all text-sm font-semibold"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Live Demo
                         </a>
                       </div>
                     )}

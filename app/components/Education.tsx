@@ -18,8 +18,8 @@ export default function Education() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Education</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+            Education
           </h2>
           <p className="text-lg text-muted-foreground">
             Academic excellence and continuous learning

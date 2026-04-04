@@ -30,8 +30,8 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Technical Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+            Technical Skills
           </h2>
           <p className="text-lg text-muted-foreground">
             Full-stack AI development from research to production

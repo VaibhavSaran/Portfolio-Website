@@ -109,7 +109,7 @@ export default function Hero() {
             >
               <img
                 id="profile-photo"
-                src="/images/profile.jpg"
+                src="/images/profile.JPG"
                 alt="Vaibhav Saran"
                 style={{
                   width: "100%",

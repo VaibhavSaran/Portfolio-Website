@@ -204,7 +204,7 @@ export default function Hero() {
                   </button>
 
                   <a
-                    href="https://drive.google.com/file/d/1KmVq5vGGhtSYDxVxxAiitOC6nv-Ed5En/view?usp=sharing"
+                    href="https://drive.google.com/file/d/134342Mr6VdjHp8Bn3Hxzsw0O2vwHh9mQ/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group px-8 py-4 glass-card rounded-lg font-semibold text-lg hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105 border-2 border-white/20"

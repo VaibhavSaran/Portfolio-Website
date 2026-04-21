@@ -265,8 +265,8 @@ export const resumeData = {
     },
     {
       type: "project",
-      title: "5,000+ Articles · StockPilot AI",
-      context: "Indexed 5,000+ real-time financial news articles across 7 stock tickers using ChromaDB vector store and Apache Airflow DAGs — deployed live on AWS EC2.",
+      title: "1,000+ Articles · StockPilot AI",
+      context: "Indexed 1,000+ real-time financial news articles across 7 stock tickers using ChromaDB vector store and Apache Airflow DAGs — deployed live on AWS EC2.",
       liveDemo: "http://3.209.133.64"
     },
     {

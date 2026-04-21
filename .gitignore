@@ -36,8 +36,9 @@ next-env.d.ts
 docs/Profile.pdf
 prompt/*
 
-#Ignoring claude
+#Ignoring claude and skills
 .claude/*
+graphify-out/*
 
 #Ignore Keys
 github-actions-key.json

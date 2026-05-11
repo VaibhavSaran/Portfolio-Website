@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Code2, ExternalLink, Github, Play, Database, FileText, Linkedin } from "lucide-react";
+import { ArrowUpRight, Database, ExternalLink, FileText, Github, Play, Workflow } from "lucide-react";
 import { useRef } from "react";
 import { resumeData } from "../data/resume";
 
-const linkIcons: { [key: string]: any } = {
+const linkIcons: Record<string, typeof ExternalLink> = {
   liveDemo: ExternalLink,
   github: Github,
   demoVideo: Play,
@@ -13,208 +13,124 @@ const linkIcons: { [key: string]: any } = {
   paperPdf: FileText,
 };
 
-const linkLabels: { [key: string]: string } = {
-  liveDemo: "Live Demo",
-  github: "GitHub",
-  demoVideo: "Demo Video",
-  kaggleDataset: "Kaggle Dataset",
-  paperPdf: "Research Paper",
+const linkLabels: Record<string, string> = {
+  liveDemo: "Live",
+  github: "Code",
+  demoVideo: "Demo",
+  kaggleDataset: "Dataset",
+  paperPdf: "Paper",
 };
-
-// Row 1: StockPilot[0] + F1 Primus[1] (side-by-side, Featured badges)
-// Row 2: Job Search[2] (full-width, no Featured badge)
-// Row 3: Sepsis RL[3] + Laptrack[4]
 
 type Project = (typeof resumeData.projects)[number];
 
-function ProjectCard({
-  project,
-  index,
-  isInView,
-  isFeatured = false,
-}: {
-  project: Project;
-  index: number;
-  isInView: boolean;
-  isFeatured?: boolean;
-}) {
-  const isLaptrack = project.title.startsWith("Laptrack");
-  const isJobSearch = project.title.startsWith("Job Search");
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const links = Object.entries(project.links).filter(([, url]) => Boolean(url));
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-      className={`group relative glass-card rounded-xl p-8 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 hover:shadow-2xl ${isLaptrack ? "opacity-[0.82]" : ""}`}
+    <motion.article
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.55, delay: Math.min(index * 0.06, 0.24) }}
+      className={`group quiet-card relative overflow-hidden p-6 transition duration-300 hover:-translate-y-1 hover:border-primary ${
+        index === 0 ? "lg:col-span-7" : index === 1 ? "lg:col-span-5" : "lg:col-span-4"
+      }`}
     >
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-300" />
-
-      <div className="relative z-10">
-        <div className="flex items-start gap-4 mb-6">
-          <div className="p-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 shadow-lg flex-shrink-0">
-            <Code2 className="w-6 h-6 text-white" />
-          </div>
-          <div className="flex-1 min-w-0">
-            {isFeatured && (
-              <div className="mb-2">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold" style={{ fontSize: "11px" }}>
-                  Featured
-                </span>
-              </div>
-            )}
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-gradient transition-all">
-              {project.title}
-            </h3>
-            <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-              <span>{project.dates}</span>
-              {project.associated && (
-                <>
-                  <span>•</span>
-                  <span>{project.associated}</span>
-                </>
-              )}
-            </div>
-          </div>
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-accent to-[hsl(var(--brand-3))] opacity-80" />
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-secondary text-primary">
+          <Workflow className="h-6 w-6" />
         </div>
-
-        {isLaptrack && (
-          <div className="mb-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-secondary/60 border border-white/20 text-muted-foreground">
-              Data Engineering Project
-            </span>
-          </div>
-        )}
-
-        {(project.award || project.publication) && (
-          <div className="mb-6 space-y-2">
-            {project.award && (
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 text-sm font-semibold">
-                <span className="text-yellow-500">🏆</span>
-                {project.award}
-              </div>
-            )}
-            {project.publication && (
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 text-sm font-semibold">
-                <span className="text-indigo-500">📄</span>
-                {project.publication}
-              </div>
-            )}
-          </div>
-        )}
-
-        <ul className="space-y-3 mb-6">
-          {project.bullets.map((bullet, i) => (
-            <li key={i} className="flex gap-3 text-sm text-muted-foreground">
-              <span className="text-indigo-500 mt-1 flex-shrink-0">▸</span>
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.skills.map((skill, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-secondary/50 hover:bg-secondary transition-colors"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-
-        {!isJobSearch && Object.keys(project.links).length > 0 && (
-          <div className="flex flex-wrap gap-3">
-            {Object.entries(project.links).map(([key, url]) => {
-              const Icon = linkIcons[key];
-              const label = linkLabels[key];
-              if (!url) return null;
-              return (
-                <a
-                  key={key}
-                  href={url as string}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/link inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 hover:from-indigo-500/20 hover:to-purple-500/20 hover:border-indigo-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                >
-                  {Icon && <Icon className="w-4 h-4 group-hover/link:scale-110 transition-transform" />}
-                  <span className="text-sm font-semibold">{label}</span>
-                </a>
-              );
-            })}
-          </div>
-        )}
-
-        {project.contributors && project.contributors.length > 0 && (
-          <div className="mt-6 pt-6 border-t border-white/10">
-            <p className="text-xs text-muted-foreground font-semibold mb-3">Contributors:</p>
-            <div className="flex flex-wrap gap-4">
-              {project.contributors.map((contributor, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span className="text-sm text-muted-foreground">{contributor.name}</span>
-                  <div className="flex gap-1">
-                    {contributor.github && (
-                      <a href={contributor.github} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-md hover:bg-indigo-500/20 transition-colors" aria-label={`${contributor.name} GitHub`}>
-                        <Github className="w-3.5 h-3.5 text-muted-foreground hover:text-indigo-400" />
-                      </a>
-                    )}
-                    {contributor.linkedin && (
-                      <a href={contributor.linkedin} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-md hover:bg-blue-500/20 transition-colors" aria-label={`${contributor.name} LinkedIn`}>
-                        <Linkedin className="w-3.5 h-3.5 text-muted-foreground hover:text-blue-400" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        <p className="text-right text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+          {project.dates}
+        </p>
       </div>
-    </motion.div>
+
+      <div className="mt-8">
+        <h3 className="text-2xl font-semibold tracking-tight text-foreground">{project.title}</h3>
+        {project.associated && <p className="mt-2 text-sm font-semibold text-primary">{project.associated}</p>}
+      </div>
+
+      {(project.award || project.publication) && (
+        <div className="mt-5 grid gap-2">
+          {project.award && (
+            <p className="border border-border bg-secondary/60 px-3 py-2 text-xs font-semibold text-foreground">
+              {project.award}
+            </p>
+          )}
+          {project.publication && (
+            <p className="border border-border bg-secondary/60 px-3 py-2 text-xs font-semibold text-foreground">
+              {project.publication}
+            </p>
+          )}
+        </div>
+      )}
+
+      <ul className="mt-6 space-y-3">
+        {project.bullets.map((bullet) => (
+          <li key={bullet} className="grid grid-cols-[14px_1fr] gap-3 text-sm leading-6 text-muted-foreground">
+            <span className="mt-2 h-1.5 w-1.5 bg-primary" />
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        {project.skills.map((skill) => (
+          <span key={skill} className="border border-border bg-background/60 px-2.5 py-1 text-xs font-semibold text-muted-foreground">
+            {skill}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-7 flex flex-wrap gap-2">
+        {links.map(([key, url]) => {
+          const Icon = linkIcons[key] ?? ArrowUpRight;
+          return (
+            <a
+              key={key}
+              href={url as string}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-10 items-center gap-2 border border-border bg-card px-3 py-2 text-sm font-bold transition hover:border-primary hover:text-primary"
+            >
+              <Icon className="h-4 w-4" />
+              {linkLabels[key] ?? key}
+            </a>
+          );
+        })}
+      </div>
+    </motion.article>
   );
 }
 
 export default function Projects() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
-  const projects = resumeData.projects;
-  // Row 1: StockPilot[0] + F1 Primus[1]
-  // Row 2: Job Search[2] (full-width)
-  // Row 3: Sepsis RL[3] + Laptrack[4]
+  const isInView = useInView(ref, { once: true, amount: 0.12 });
 
   return (
-    <section ref={ref} className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" ref={ref} className="py-24">
+      <div className="section-shell">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.55 }}
+          className="mb-10 grid gap-6 lg:grid-cols-[0.75fr_1fr]"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
-            Featured Projects
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Production-grade AI systems from research to deployment
+          <div>
+            <p className="section-kicker">Selected systems</p>
+            <h2 className="section-title">Projects that show how I build.</h2>
+          </div>
+          <p className="section-copy lg:mt-8">
+            These are not placeholder case studies. They cover agent routing, RAG, data pipelines, deployment,
+            research translation, and product-facing interfaces using the exact project data already in the codebase.
           </p>
         </motion.div>
 
-        {/* Row 1 — StockPilot + F1 Primus (both Featured) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <ProjectCard project={projects[0]} index={0} isInView={isInView} isFeatured={true} />
-          <ProjectCard project={projects[1]} index={1} isInView={isInView} isFeatured={true} />
-        </div>
-
-        {/* Row 2 — Job Search (full-width, no Featured badge) */}
-        <div className="mb-8">
-          <ProjectCard project={projects[2]} index={2} isInView={isInView} isFeatured={false} />
-        </div>
-
-        {/* Row 3 — Sepsis RL + Laptrack */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <ProjectCard project={projects[3]} index={3} isInView={isInView} />
-          <ProjectCard project={projects[4]} index={4} isInView={isInView} />
+        <div className="grid gap-4 lg:grid-cols-12">
+          {resumeData.projects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
         </div>
       </div>
     </section>

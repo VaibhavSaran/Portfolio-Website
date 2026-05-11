@@ -135,9 +135,9 @@ export default function ChatBot() {
     width: "420px",
     maxHeight: "580px",
     zIndex: 9998,
-    background: "#1a1a2e",
-    border: "1px solid rgba(255,255,255,0.15)",
-    borderRadius: "16px",
+    background: "hsl(var(--card))",
+    border: "1px solid hsl(var(--border))",
+    borderRadius: "8px",
     boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
     transformOrigin: "bottom right",
     display: "flex",
@@ -160,9 +160,9 @@ export default function ChatBot() {
         .chatbot-md p:last-child { margin-bottom: 0; }
         .chatbot-md ul { margin: 4px 0 6px 0; padding-left: 16px; }
         .chatbot-md li { margin-bottom: 3px; font-size: 14px; line-height: 1.6; }
-        .chatbot-md strong { font-weight: 600; color: rgba(255,255,255,0.95); }
-        .chatbot-md a { color: #7C6FFF; text-decoration: underline; }
-        .chatbot-md code { background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+        .chatbot-md strong { font-weight: 700; color: hsl(var(--foreground)); }
+        .chatbot-md a { color: hsl(var(--primary)); text-decoration: underline; }
+        .chatbot-md code { background: hsl(var(--background)); padding: 1px 5px; border-radius: 3px; font-size: 13px; }
         @media (max-width: 479px) {
           .chatbot-panel-mobile { right: 12px !important; left: 12px !important; width: auto !important; }
         }
@@ -186,7 +186,7 @@ export default function ChatBot() {
               width: "56px",
               height: "56px",
               borderRadius: "50%",
-              background: "linear-gradient(135deg, #7c3aed, #2563eb)",
+              background: "linear-gradient(135deg, hsl(var(--brand)), hsl(var(--brand-2)))",
               color: "white",
               fontWeight: 600,
               display: "flex",
@@ -197,7 +197,7 @@ export default function ChatBot() {
               cursor: "pointer",
               transformOrigin: "bottom right",
             }}
-            aria-label="Open Vaibhav Echo Bot"
+            aria-label="Open Vaibhav portfolio assistant"
           >
             <span
               style={{
@@ -245,7 +245,7 @@ export default function ChatBot() {
                   width: "40px",
                   height: "40px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #7c3aed, #2563eb)",
+                  background: "linear-gradient(135deg, hsl(var(--brand)), hsl(var(--brand-2)))",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -255,8 +255,8 @@ export default function ChatBot() {
                 <span style={{ fontSize: "14px", fontWeight: 600, color: "white" }}>VS</span>
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <p style={{ fontSize: "15px", fontWeight: 600, color: "white", margin: 0, lineHeight: 1.2 }}>
-                  Vaibhav Echo Bot
+                <p style={{ fontSize: "15px", fontWeight: 600, color: "hsl(var(--foreground))", margin: 0, lineHeight: 1.2 }}>
+                  Vaibhav Portfolio Assistant
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginTop: "3px" }}>
                   <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22c55e", flexShrink: 0, display: "inline-block" }} />
@@ -271,14 +271,14 @@ export default function ChatBot() {
                   cursor: "pointer",
                   padding: "6px",
                   borderRadius: "8px",
-                  color: "rgba(255,255,255,0.5)",
+                  color: "hsl(var(--muted-foreground))",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
                 }}
                 aria-label="Close chat"
-                onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "hsl(var(--secondary))")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
               >
                 <X size={18} />
@@ -300,19 +300,19 @@ export default function ChatBot() {
               {/* Welcome card */}
               <div
                 style={{
-                  background: "rgba(124,58,237,0.15)",
-                  border: "1px solid rgba(124,58,237,0.3)",
-                  borderRadius: "12px",
+                  background: "hsl(var(--secondary))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "8px",
                   padding: "12px 14px",
                   marginBottom: "4px",
                 }}
               >
-                <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: "14px", color: "hsl(var(--foreground))", lineHeight: 1.5, margin: 0 }}>
                   Hi! I&apos;m Vaibhav&apos;s AI assistant. Ask me about his projects, research, or experience!
                 </p>
                 <a
                   href="mailto:vaibhavsaran8@gmail.com"
-                  style={{ display: "inline-block", marginTop: "8px", fontSize: "13px", fontWeight: 500, color: "#818cf8" }}
+                  style={{ display: "inline-block", marginTop: "8px", fontSize: "13px", fontWeight: 700, color: "hsl(var(--primary))" }}
                 >
                   Contact Vaibhav →
                 </a>
@@ -328,15 +328,15 @@ export default function ChatBot() {
                       style={{
                         fontSize: "12px",
                         padding: "6px 12px",
-                        borderRadius: "20px",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        background: "rgba(255,255,255,0.05)",
-                        color: "rgba(255,255,255,0.75)",
+                        borderRadius: "999px",
+                        border: "1px solid hsl(var(--border))",
+                        background: "hsl(var(--card))",
+                        color: "hsl(var(--muted-foreground))",
                         cursor: "pointer",
                         transition: "background 0.15s",
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.05)")}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "hsl(var(--secondary))")}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "hsl(var(--card))")}
                     >
                       {chip}
                     </button>
@@ -358,14 +358,15 @@ export default function ChatBot() {
                       wordBreak: "break-word",
                       ...(msg.role === "user"
                         ? {
-                            background: "linear-gradient(135deg, #6366f1, #7c3aed)",
+                            background: "linear-gradient(135deg, hsl(var(--brand)), hsl(var(--brand-2)))",
                             borderRadius: "18px 18px 4px 18px",
                             fontSize: "14px",
                             lineHeight: 1.65,
                           }
                         : {
-                            background: "rgba(255,255,255,0.08)",
-                            border: "1px solid rgba(255,255,255,0.1)",
+                            background: "hsl(var(--secondary))",
+                            border: "1px solid hsl(var(--border))",
+                            color: "hsl(var(--foreground))",
                             borderRadius: "18px 18px 18px 4px",
                           }),
                     }}
@@ -400,7 +401,7 @@ export default function ChatBot() {
                 alignItems: "center",
                 gap: "8px",
                 padding: "12px 14px",
-                borderTop: "1px solid rgba(255,255,255,0.1)",
+                borderTop: "1px solid hsl(var(--border))",
                 flexShrink: 0,
               }}
             >
@@ -414,12 +415,12 @@ export default function ChatBot() {
                 disabled={isLoading}
                 style={{
                   flex: 1,
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  borderRadius: "24px",
+                  background: "hsl(var(--background))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "999px",
                   padding: "10px 16px",
                   fontSize: "14px",
-                  color: "white",
+                  color: "hsl(var(--foreground))",
                   outline: "none",
                   opacity: isLoading ? 0.5 : 1,
                 }}
@@ -431,7 +432,7 @@ export default function ChatBot() {
                   width: "36px",
                   height: "36px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #6366f1, #7c3aed)",
+                  background: "linear-gradient(135deg, hsl(var(--brand)), hsl(var(--brand-2)))",
                   border: "none",
                   cursor: inputValue.trim() && !isLoading ? "pointer" : "not-allowed",
                   opacity: !inputValue.trim() || isLoading ? 0.4 : 1,

@@ -1,64 +1,52 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Info, Github } from "lucide-react";
+import { ArrowUpRight, Info } from "lucide-react";
 import { useRef } from "react";
 import { resumeData } from "../data/resume";
 
 export default function Additional() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  if (!resumeData.extra || resumeData.extra.length === 0) return null;
+  if (!resumeData.extra?.length) return null;
 
   return (
-    <section ref={ref} className="py-16 px-4 bg-secondary/20">
-      <div className="max-w-6xl mx-auto">
+    <section ref={ref} className="py-16">
+      <div className="section-shell">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-12 text-center"
+          transition={{ duration: 0.55 }}
+          className="noise-panel border border-border p-6 md:p-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gradient">Additional Highlights</span>
-          </h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {resumeData.extra.map((item, index) => {
-            const isLinkItem = typeof item === "object" && item.text && item.link;
-            const text = isLinkItem ? item.text : item;
-
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card rounded-lg p-4 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="flex gap-3">
-                  <Info className="w-5 h-5 text-indigo-500 mt-0.5 flex-shrink-0" />
-                  <div className="flex-1">
-                    <p className="text-sm text-muted-foreground mb-2">{typeof text === "object" ? text.text : text}</p>
+          <p className="section-kicker">More context</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {resumeData.extra.map((item, index) => {
+              const isLinkItem = typeof item === "object" && "text" in item && "link" in item;
+              const text = isLinkItem ? item.text : item;
+              return (
+                <div key={index} className="flex gap-3 border border-border bg-background/56 p-4">
+                  <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="text-sm leading-6 text-muted-foreground">{text}</p>
                     {isLinkItem && (
                       <a
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 hover:from-indigo-500/20 hover:to-purple-500/20 hover:border-indigo-500/50 transition-all text-xs font-semibold"
+                        className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-primary transition hover:gap-3"
                       >
-                        <Github className="w-3.5 h-3.5" />
-                        GitHub
+                        Open repository
+                        <ArrowUpRight className="h-4 w-4" />
                       </a>
                     )}
                   </div>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

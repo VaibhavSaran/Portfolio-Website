@@ -1,122 +1,82 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Brain, Code, Cloud, Database, Workflow, Zap } from "lucide-react";
+import { Brain, Cloud, Code2, Database, Layers, Workflow, Zap } from "lucide-react";
 import { useRef } from "react";
 import { resumeData } from "../data/resume";
 
-const categoryIcons: { [key: string]: any } = {
+const categoryIcons: Record<string, typeof Code2> = {
   "AI & ML Frameworks": Brain,
-  "ML Engineering": Workflow,
+  "AI & ML Ops": Workflow,
+  "Agentic AI & Tools": Layers,
   "Cloud & Infrastructure": Cloud,
   "Databases & Vector Stores": Database,
   "Data Engineering": Zap,
   "Deep Learning": Brain,
-  "Web Development": Code,
-  "Programming Languages": Code,
-  "Agentic AI": Brain,
+  "Programming Languages": Code2,
+  "Frontend UI": Code2,
 };
 
 export default function Skills() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.12 });
 
   return (
-    <section ref={ref} className="py-20 px-4 bg-secondary/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" ref={ref} className="py-24">
+      <div className="section-shell">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.55 }}
+          className="mb-10 grid gap-6 lg:grid-cols-[0.7fr_1fr]"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
-            Technical Skills
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Full-stack AI development from research to production
-          </p>
-        </motion.div>
-
-        {/* Top Skills Highlight */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12 text-center"
-        >
-          <p className="text-sm text-muted-foreground mb-4 font-semibold">TOP SKILLS</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {resumeData.topSkills.map((skill, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                className="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold shadow-lg hover:scale-110 transition-transform"
-              >
-                {skill}
-              </motion.span>
-            ))}
+          <div>
+            <p className="section-kicker">Tooling</p>
+            <h2 className="section-title">A stack tuned for agentic AI and production ML.</h2>
+          </div>
+          <div>
+            <p className="section-copy lg:mt-8">
+              The emphasis is intentionally practical: model orchestration, evaluation-adjacent workflows, cloud
+              deployment, data movement, and the UI layers needed to make systems usable.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {resumeData.topSkills.map((skill) => (
+                <span key={skill} className="bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
-        {/* Skills Grid by Category */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {Object.entries(resumeData.skills).map(([category, skills], index) => {
-            const Icon = categoryIcons[category] || Code;
-
+            const Icon = categoryIcons[category] ?? Code2;
             return (
-              <motion.div
+              <motion.article
                 key={category}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="group glass-card rounded-xl p-6 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 hover:shadow-xl"
+                transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.3) }}
+                className="quiet-card p-5 transition hover:-translate-y-1 hover:border-primary"
               >
-                {/* Category header */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500">
-                    <Icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="font-bold text-lg">{category}</h3>
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center bg-secondary text-primary">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-semibold tracking-tight">{category}</h3>
                 </div>
-
-                {/* Skills list */}
                 <div className="flex flex-wrap gap-2">
-                  {skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 rounded-md text-sm bg-secondary/50 hover:bg-gradient-to-r hover:from-indigo-500/20 hover:to-purple-500/20 hover:border hover:border-indigo-500/30 transition-all duration-200"
-                    >
+                  {skills.map((skill) => (
+                    <span key={skill} className="border border-border bg-background/60 px-2.5 py-1 text-xs font-semibold text-muted-foreground">
                       {skill}
                     </span>
                   ))}
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
-
-        {/* Languages */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 text-center"
-        >
-          <p className="text-sm text-muted-foreground mb-3 font-semibold">LANGUAGES</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {resumeData.languages.map((language, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 rounded-lg glass-card text-sm font-medium"
-              >
-                {language}
-              </span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -1,217 +1,130 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Mail, Github, Linkedin, Calendar, CheckCircle } from "lucide-react";
+import { Calendar, CheckCircle, Github, Linkedin, Mail, Send } from "lucide-react";
 import { useRef, useState } from "react";
+import { resumeData } from "../data/resume";
 
 export default function Contact() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.12 });
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("sending");
 
-    const formData = new FormData(e.currentTarget);
-
     try {
-      // Formspree endpoint for vaibhavsaran8@gmail.com
       const response = await fetch("https://formspree.io/f/xeeprnpp", {
         method: "POST",
-        body: formData,
+        body: new FormData(e.currentTarget),
         headers: { Accept: "application/json" },
       });
 
-      if (response.ok) {
-        setFormStatus("success");
-        (e.target as HTMLFormElement).reset();
-      } else {
-        setFormStatus("error");
-      }
+      if (!response.ok) throw new Error("Form submission failed");
+      setFormStatus("success");
+      e.currentTarget.reset();
     } catch {
       setFormStatus("error");
     }
   };
 
   return (
-    <section id="contact" ref={ref} className="py-20 px-4">
-      <div className="max-w-[1100px] mx-auto">
+    <section id="contact" ref={ref} className="py-24">
+      <div className="section-shell">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.55 }}
+          className="grid gap-6 lg:grid-cols-[0.78fr_1fr]"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Get In Touch</h2>
-          <p className="text-lg text-muted-foreground">
-            Let&apos;s build something meaningful together
-          </p>
-        </motion.div>
-
-        <div className="flex flex-col lg:flex-row gap-8 items-start">
-          {/* Left: Contact info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-[340px] lg:flex-shrink-0 space-y-6"
-          >
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Open to AI/ML engineering roles, research collaborations, and interesting projects. Feel free to reach out directly or schedule a call.
+          <div className="noise-panel border border-border p-6 md:p-8">
+            <p className="section-kicker">Contact</p>
+            <h2 className="section-title">Reach out when the role needs builders who can ship.</h2>
+            <p className="section-copy">
+              I am open to AI Engineer, ML Engineer, LLM/GenAI Engineer, MLOps Engineer, and Applied Scientist roles.
             </p>
 
-            <div className="space-y-3">
-              <a
-                href="mailto:vaibhavsaran8@gmail.com"
-                className="flex items-center gap-3 p-4 glass-card rounded-xl hover:bg-white/20 dark:hover:bg-white/10 transition-all group"
-              >
-                <div className="p-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500">
-                  <Mail className="w-5 h-5 text-white" />
-                </div>
-                <span className="font-medium group-hover:text-indigo-400 transition-colors">
-                  vaibhavsaran8@gmail.com
-                </span>
+            <div className="mt-8 grid gap-3">
+              <a href={`mailto:${resumeData.basics.email}`} className="inline-flex items-center gap-3 border border-border bg-background/70 px-4 py-3 font-semibold hover:border-primary">
+                <Mail className="h-5 w-5 text-primary" />
+                {resumeData.basics.email}
               </a>
-
-              <a
-                href="https://linkedin.com/in/vaibhav-saran"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 glass-card rounded-xl hover:bg-white/20 dark:hover:bg-white/10 transition-all group"
-              >
-                <div className="p-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600">
-                  <Linkedin className="w-5 h-5 text-white" />
-                </div>
-                <span className="font-medium group-hover:text-blue-400 transition-colors">
-                  linkedin.com/in/vaibhav-saran
-                </span>
+              <a href={`https://${resumeData.basics.links.linkedin}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-border bg-background/70 px-4 py-3 font-semibold hover:border-primary">
+                <Linkedin className="h-5 w-5 text-primary" />
+                linkedin.com/in/vaibhav-saran
               </a>
-
-              <a
-                href="https://github.com/VaibhavSaran"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 glass-card rounded-xl hover:bg-white/20 dark:hover:bg-white/10 transition-all group"
-              >
-                <div className="p-2 rounded-lg bg-gradient-to-r from-gray-600 to-gray-700">
-                  <Github className="w-5 h-5 text-white" />
-                </div>
-                <span className="font-medium group-hover:text-purple-400 transition-colors">
-                  github.com/VaibhavSaran
-                </span>
+              <a href={`https://${resumeData.basics.links.github}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-border bg-background/70 px-4 py-3 font-semibold hover:border-primary">
+                <Github className="h-5 w-5 text-primary" />
+                github.com/VaibhavSaran
+              </a>
+              <a href="https://calendly.com/vaibhavsaran8/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-border bg-primary px-4 py-3 font-bold text-primary-foreground hover:opacity-90">
+                <Calendar className="h-5 w-5" />
+                Schedule a call
               </a>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Right: Contact form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-full flex-1 min-w-0 glass-card rounded-xl p-6"
-          >
+          <div className="quiet-card p-6 md:p-8">
             {formStatus === "success" ? (
-              <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-                <CheckCircle className="w-12 h-12 text-green-500" />
-                <p className="text-lg font-semibold">Message sent!</p>
-                <p className="text-muted-foreground text-sm">I&apos;ll get back to you soon.</p>
+              <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
+                <CheckCircle className="h-12 w-12 text-accent" />
+                <p className="mt-4 text-2xl font-semibold">Message sent.</p>
+                <p className="mt-2 text-muted-foreground">I will get back to you soon.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name + Email row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="name" className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                      Your Name
-                    </label>
+              <form onSubmit={handleSubmit} className="grid gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="grid gap-2 text-sm font-semibold">
+                    Name
                     <input
-                      id="name"
                       name="name"
                       type="text"
                       required
-                      placeholder="John Doe"
-                      className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-indigo-500/60 transition-colors"
+                      placeholder="Your name"
+                      className="min-h-12 border border-border bg-background px-4 text-foreground placeholder:text-muted-foreground/70"
                     />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="email" className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                      Your Email
-                    </label>
+                  </label>
+                  <label className="grid gap-2 text-sm font-semibold">
+                    Email
                     <input
-                      id="email"
                       name="email"
                       type="email"
                       required
-                      placeholder="hello@example.com"
-                      className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-indigo-500/60 transition-colors"
+                      placeholder="you@company.com"
+                      className="min-h-12 border border-border bg-background px-4 text-foreground placeholder:text-muted-foreground/70"
                     />
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="message" className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                    Message
                   </label>
+                </div>
+                <label className="grid gap-2 text-sm font-semibold">
+                  Message
                   <textarea
-                    id="message"
                     name="message"
                     required
-                    rows={5}
-                    placeholder="Write your message here..."
-                    className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-indigo-500/60 transition-colors resize-none"
+                    rows={8}
+                    placeholder="Tell me about the role, team, or problem space."
+                    className="resize-none border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/70"
                   />
-                </div>
+                </label>
 
-                {/* Submit button */}
                 <button
                   type="submit"
                   disabled={formStatus === "sending"}
-                  className="w-full py-3.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium text-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {formStatus === "sending" ? (
-                    <>
-                      <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
+                  {formStatus === "sending" ? "Sending..." : "Send message"}
+                  <Send className="h-4 w-4" />
                 </button>
 
                 {formStatus === "error" && (
-                  <p className="text-xs text-red-400 text-center">
-                    Something went wrong. Please email me directly at{" "}
-                    <a href="mailto:vaibhavsaran8@gmail.com" className="underline hover:text-red-300">
-                      vaibhavsaran8@gmail.com
-                    </a>
+                  <p className="text-sm font-semibold text-red-500">
+                    Something went wrong. Please email me directly at {resumeData.basics.email}.
                   </p>
                 )}
-
-                {/* Divider */}
-                <div className="flex items-center gap-3 py-1">
-                  <div className="flex-1 h-px bg-white/10" />
-                  <span className="text-xs text-muted-foreground font-medium">OR</span>
-                  <div className="flex-1 h-px bg-white/10" />
-                </div>
-
-                {/* Schedule button */}
-                <button
-                  type="button"
-                  onClick={() => window.open("https://calendly.com/vaibhavsaran8/30min", "_blank")}
-                  className="w-full py-3.5 rounded-lg border border-indigo-500/40 bg-indigo-500/10 hover:bg-indigo-500/20 text-white font-medium text-sm transition-all flex items-center justify-center gap-2"
-                >
-                  <Calendar className="w-4 h-4" />
-                  Schedule a Call
-                </button>
               </form>
             )}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

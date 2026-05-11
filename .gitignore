@@ -38,6 +38,7 @@ prompt/*
 
 #Ignoring claude and skills
 .claude/*
+.agents/
 graphify-out/*
 
 #Ignore Keys

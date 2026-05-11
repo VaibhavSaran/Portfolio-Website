@@ -47,12 +47,12 @@ export default function Home() {
 
             <TopImpact />
 
-            <div id="experience">
-              <Experience />
-            </div>
-
             <div id="projects">
               <Projects />
+            </div>
+
+            <div id="experience">
+              <Experience />
             </div>
 
             <div id="skills">

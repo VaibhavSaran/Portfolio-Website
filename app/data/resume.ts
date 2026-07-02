@@ -135,15 +135,15 @@ export const resumeData = {
   projects: [
     {
       title: "StockPilot AI — Agentic RAG Stock Analysis Agent",
-      dates: "March 2026 - Present",
+      dates: "February 2026 - March 2026",
       associated: null,
       bullets: [
-        "Built a full-stack AI-powered stock market analysis agent using a multi-agent LangGraph architecture with Claude AI (claude-sonnet-4-6) as the primary LLM and Google Gemini for embeddings.",
-        "The system features a Supervisor Agent that intelligently routes natural language queries to three specialized sub-agents: News RAG (ChromaDB + web search with source citations), Stock Data RAG (NL-to-SQL against PostgreSQL), and Stock Charts RAG (candlestick visualizations).",
-        "Real-time data pipelines built with Apache Airflow ingest live stock prices via yfinance (hourly) and financial news (every 3 hours), with automatic ChromaDB vector sync every 4 hours.",
-        "Deployed on AWS EC2 (Ubuntu 24.04) with Nginx reverse proxy, Docker Compose orchestrating 9 containers, and a GitHub Actions CI/CD pipeline for automated deployments on every push to main."
+        "Built an agentic RAG assistant answering plain-English questions on live stock data and news across stock tickers, using a supervisor-based multi-agent architecture (News RAG, Stock Data RAG, Stock Charts RAG) powered by Claude Sonnet and Gemini embeddings.",
+        "Designed a formal RAG evaluation pipeline using the RAGAS framework (faithfulness, answer relevancy, context precision, context recall) with a custom 15-question test dataset grounded in real production data, achieving 0.624 overall score and 0.754 faithfulness with Claude Sonnet as judge LLM.",
+        "Implemented hybrid search combining BM25 keyword matching with vector similarity via Reciprocal Rank Fusion, improving Answer Relevancy from 0.673 to 0.736. Used per-question RAGAS breakdown to diagnose a supervisor routing bug causing 0.0 faithfulness scores on misrouted queries — directly driving prioritization of the fix.",
+        "Built a data quality pipeline that identified and removed 331 garbage articles (11.4% of corpus) including consent pages, malformed URLs, and duplicate content, improving retrieval quality at the source. Automated multi-source data sync across PostgreSQL, MongoDB, and ChromaDB using Apache Airflow DAGs, containerized with Docker on AWS EC2 with GitHub Actions CI/CD."
       ],
-      skills: ["LangGraph", "LangChain", "Apache Airflow", "ChromaDB", "PostgreSQL", "Docker", "AWS EC2", "Nginx", "GitHub Actions"],
+      skills: ["LangGraph", "Claude Sonnet", "RAG", "RAGAS", "ChromaDB", "FB Prophet", "Apache Airflow", "FastAPI", "Docker", "AWS EC2", "GitHub Actions"],
       links: {
         liveDemo: "https://stockpilot.vaibhavsaran.com/",
         github: "https://github.com/VaibhavSaran/Stock-Pilot-AI"
@@ -152,7 +152,7 @@ export const resumeData = {
     },
     {
       title: "F1 Primus AI — Autonomous Pre-Race Prediction Pipeline",
-      dates: "March 2026",
+      dates: "January 2026 - February 2026",
       associated: null,
       bullets: [
         "Built an end-to-end agentic AI system that autonomously generates pre-race intelligence reports for the 2026 Formula 1 season.",
@@ -282,7 +282,7 @@ export const resumeData = {
     "Agentic AI & Tools": ["Agentic AI development", "Multi-Agent Systems", "RAG","Claude Code", "Google Gemini"],
     "Cloud & Infrastructure": ["AWS EC2", "GCP Cloud Run", "Nginx", "FastAPI"],
     "Databases & Vector Stores": ["SQLite", "PostgreSQL", "ChromaDB", "MongoDB"],
-    "Data Engineering": ["PySpark", "Hadoop"],
+    "Data Engineering": ["PySpark", "Hadoop", "FB Prophet"],
     "Deep Learning": ["Reinforcement Learning", "HDBSCAN", "UMAP", "VAE", "GANs", "Transformers"],
     "Programming Languages": ["Python", "C++", "C"],
     "Frontend UI": ["Streamlit", "Flask"]

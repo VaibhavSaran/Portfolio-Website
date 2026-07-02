@@ -3,7 +3,7 @@ export const resumeData = {
     name: "Vaibhav Saran",
     title: "Agentic AI Engineer · LLM Systems · Production ML · IEEE ICMLA 2025",
     summary: "MS in Artificial Intelligence from SUNY Buffalo (Dec 2025). Published research on attention-based offline RL for sepsis treatment (IEEE ICMLA 2025). Building production LLM and multi-agent AI systems from research to deployment.",
-    location: "Buffalo, New York, United States",
+    location: "Naperville, Chicago, United States",
     email: "vaibhavsaran8@gmail.com",
     phone: null,
     links: {
@@ -25,7 +25,7 @@ export const resumeData = {
     {
       company: "University at Buffalo - Artificial Intelligence and Data Science",
       role: "Research Assistant",
-      dates: "October 2024 - December 2025",
+      dates: "October 2024 - Present",
       duration: "1 year 3 months",
       location: "Buffalo, New York, United States",
       bullets: [

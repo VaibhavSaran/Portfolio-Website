@@ -44,7 +44,7 @@ EDUCATION:
 
 EXPERIENCE:
 
-1. Green AI Labs, University at Buffalo | Research Intern | Jan 2025 – Dec 2025 | Buffalo, NY
+1. Green AI Labs, University at Buffalo | Research Intern | Jan 2025 – Present | Buffalo, NY
 - Designed an offline RL pipeline using Advantage-Weighted Regression with a custom attention encoder and XGBoost/TabNet ensemble over 874K ICU records, achieving 83% treatment accuracy — a 23-point gain over the BCQ baseline — for automated sepsis treatment decision support.
 - Performed ICU patient risk stratification using unsupervised clustering (HDBSCAN, UMAP) over 27,799 patient stays, producing 3 validated mortality-risk categories (low, intermediate, high) to support faster triage.
 - Designed the Green-CRISP-ML(Q) framework integrating Scalene and CodeCarbon to profile energy and carbon costs across the ML lifecycle, identifying that model training drives 93.5% of pipeline CO2 emissions.

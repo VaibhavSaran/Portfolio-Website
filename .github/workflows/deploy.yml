@@ -37,4 +37,5 @@ jobs:
             --region us-central1 \
             --allow-unauthenticated \
             --port 3000 \
-            --project portfolio-website-490407
+            --project portfolio-website-490407 \
+            --set-env-vars GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}

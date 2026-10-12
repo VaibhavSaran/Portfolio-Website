@@ -91,7 +91,7 @@ export default function Hero() {
               <ArrowDown className="h-4 w-4" />
             </button>
             <a
-              href="https://drive.google.com/file/d/134342Mr6VdjHp8Bn3Hxzsw0O2vwHh9mQ/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Q3VCdAh8o8nhSeflu_OFKetUu4AU0TGQ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center gap-2 border border-border bg-card px-6 py-3 text-sm font-bold text-foreground transition hover:-translate-y-1 hover:border-primary"

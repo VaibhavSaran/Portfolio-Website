@@ -1,0 +1,504 @@
+[
+  {
+    "file": "assets/archive/documents/Vaibhav-Saran-Resume.pdf",
+    "role": "archive",
+    "bytes": 132925,
+    "sha256": "c52e1983fb393743a01db9fdaae91ed95f9b20673872a099953f5d9cbd2ffa23"
+  },
+  {
+    "file": "assets/archive/previous-image-instructions.txt",
+    "role": "archive",
+    "bytes": 109,
+    "sha256": "8c080711577f07a930c3cfd9e38b862d11e245ee299a3fc5b82e479089af4129"
+  },
+  {
+    "file": "assets/archive/vaibhav-saran-previous-profile.jpg",
+    "role": "archive",
+    "bytes": 396995,
+    "sha256": "c7179ea405a0f7c60543edd8dee68be057403f4a44074904c9a7fae8a6fffc7a"
+  },
+  {
+    "file": "assets/archive/web-exports/automation.webp",
+    "role": "archive",
+    "bytes": 52216,
+    "sha256": "b6202d560dec02c0ac4339c9565e849e481944ff6071007ee99d10faad8bb218"
+  },
+  {
+    "file": "assets/archive/web-exports/f1.webp",
+    "role": "archive",
+    "bytes": 176472,
+    "sha256": "b9d677688b55e03338bf7b2b0ba3fc34d945d450f5c1830ad0bbea7ab66991ab"
+  },
+  {
+    "file": "assets/archive/web-exports/hand-sign-editorial-v2.webp",
+    "role": "archive",
+    "bytes": 89480,
+    "sha256": "f9b872515b9da3008013c47937f2fdd4c9057b27357171467325fc41fc14e9b5"
+  },
+  {
+    "file": "assets/archive/web-exports/hand-sign.webp",
+    "role": "archive",
+    "bytes": 24350,
+    "sha256": "1282a21766fbf83df3c4434090bf470e100d9461e40f97abdf2eda12e457a4e5"
+  },
+  {
+    "file": "assets/archive/web-exports/laptrack-editorial-v2.webp",
+    "role": "archive",
+    "bytes": 143322,
+    "sha256": "acc66e4af76e085f49cbf331cff5c4d842843f0ac4d0d5b2ae1dd1e8827f057a"
+  },
+  {
+    "file": "assets/archive/web-exports/laptrack.webp",
+    "role": "archive",
+    "bytes": 35612,
+    "sha256": "e2083bb17dccccefc4f791a06e646845445f871c2b0a4ed06bbd63698d672ef5"
+  },
+  {
+    "file": "assets/archive/web-exports/portrait.webp",
+    "role": "archive",
+    "bytes": 103472,
+    "sha256": "a642fa27b271c75e8996a1184477d6cea73708a3ed2e2927e3beff3e277a6ca7"
+  },
+  {
+    "file": "assets/archive/web-exports/stockpilot.webp",
+    "role": "archive",
+    "bytes": 128882,
+    "sha256": "3652c63f2d79984b3896f54f03e4c1f52fca7fc530b381ec63301db2832c13a9"
+  },
+  {
+    "file": "assets/artwork/automation-editorial-v2.png",
+    "role": "source-reference",
+    "bytes": 2046038,
+    "sha256": "1cebf5a6bb72c039eeb6209914fe000ce0285ede8d113ba6664fd112f8243a4e"
+  },
+  {
+    "file": "assets/artwork/f1-editorial-v2.png",
+    "role": "source-reference",
+    "bytes": 1953312,
+    "sha256": "e94c78d3764b5144a302d637b4e9d28aa7f6449919ba666505f48800e4e83040"
+  },
+  {
+    "file": "assets/artwork/green-crisp-editorial-v2.png",
+    "role": "source-reference",
+    "bytes": 2403857,
+    "sha256": "10fb763c24a9e47ee5f0e511e4fdc440bdafeab0a7118ab27b37023500fb1cea"
+  },
+  {
+    "file": "assets/artwork/hand-sign-editorial-v2.png",
+    "role": "source-reference",
+    "bytes": 1842855,
+    "sha256": "88eb357ec8a93632ed264523be8d7ab692d941d95393ff847e6efe14f13e2daa"
+  },
+  {
+    "file": "assets/artwork/hand-sign-editorial-v3.png",
+    "role": "source-reference",
+    "bytes": 1899293,
+    "sha256": "838980c7cdd822987c53ee686e09411a6e6e83dab7a6d987b0bad78cf41c5964"
+  },
+  {
+    "file": "assets/artwork/laptrack-editorial-v2.png",
+    "role": "source-reference",
+    "bytes": 1972631,
+    "sha256": "cee49456ea6c48ab7ec6179200762d4d19095095c552cd8be98a974c5b36d1aa"
+  },
+  {
+    "file": "assets/artwork/laptrack-editorial-v3.png",
+    "role": "source-reference",
+    "bytes": 1884925,
+    "sha256": "e2361b0b4571a3d167b84a49ffb825d4c5d91ef5e94ff66ec6bad4f92193370a"
+  },
+  {
+    "file": "assets/artwork/sepsis-editorial-v2.png",
+    "role": "source-reference",
+    "bytes": 2354150,
+    "sha256": "1e8ad43c70664f8856f7bb8d0592af37b91ad7869c3f8c5c95867ef5d1a5feb2"
+  },
+  {
+    "file": "assets/artwork/stockpilot-editorial-v2.png",
+    "role": "source-reference",
+    "bytes": 1900620,
+    "sha256": "55cfbe2e3046c30a981dc523d98de0881b8d1fa9de450da417fee336c55b1d00"
+  },
+  {
+    "file": "assets/portraits/manifest.json",
+    "role": "source-reference",
+    "bytes": 4580,
+    "sha256": "96eb0d1ee4cb89eb87606499d1dc4f32939f9c4e14f1a1750f239b771e753b67"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-beige-suit-front.jpg",
+    "role": "source-reference",
+    "bytes": 55519,
+    "sha256": "b475901b70b72cb85b176699896cb4e05d33229d0fd91df618916c2d61a44668"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-beige-suit-smile.jpg",
+    "role": "source-reference",
+    "bytes": 52135,
+    "sha256": "cd80e8faa4983a4784c6a7e1065d9c3ca1cfed35b89edd5c6ed0d94a1d48252a"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-beige-suit-three-quarter.jpg",
+    "role": "source-reference",
+    "bytes": 55123,
+    "sha256": "d880feccc280ca20e4f821216e7bbfe89a3d3688d8e81afc9fa3a7588c14bf31"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-campus-computer-science-colleague.jpg",
+    "role": "source-reference",
+    "bytes": 223935,
+    "sha256": "f0a177fc4ae4dd46aefd96abf80012a160e6433cd86669fa5ebfe5015ca021dc"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-car-window-profile.jpg",
+    "role": "source-reference",
+    "bytes": 143955,
+    "sha256": "2b20d507fc71db6820d4ecdad2558d1fde079d2c5b713283d317ddb0d30906f8"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-dark-suit-conference-curtains.jpg",
+    "role": "source-reference",
+    "bytes": 345857,
+    "sha256": "b575427abd10acee19079d707f5b0227bab6f71a702e573fe10788c006ea5ce8"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-dark-suit-hallway.jpg",
+    "role": "source-reference",
+    "bytes": 133261,
+    "sha256": "67775343afb37c8610375b166dec661d277ab8e99596a39d6b495e038652d81b"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-dark-suit-mirror-selfie.jpg",
+    "role": "source-reference",
+    "bytes": 47412,
+    "sha256": "e6772c741365416347d209608bdbee439af6301115b9ec0066e447b2cc74e38d"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-green-crisp-poster-presentation.jpg",
+    "role": "source-reference",
+    "bytes": 155295,
+    "sha256": "d2d7dfb9ab1620b73bfbd5079aa486c9b2eefee32b92e0824b35e50425defe6a"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-river-rapids-smile.jpg",
+    "role": "source-reference",
+    "bytes": 238021,
+    "sha256": "2f09a078fc578e27ad53895f23734394d301b4d8cf83b5b9398d9bb297fc4287"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-river-rapids-wide.jpg",
+    "role": "source-reference",
+    "bytes": 268358,
+    "sha256": "c313da41b95f5433f59fa516896b6b9ae0217077012a4372841a12d297c4587f"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-riverside-dam-profile.jpg",
+    "role": "source-reference",
+    "bytes": 105721,
+    "sha256": "e155d38fa48b8c62285b76be06cce9a46923f6f1d74bd5bb169415989bd9c2f1"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-winter-outdoor-selfie.jpg",
+    "role": "source-reference",
+    "bytes": 93894,
+    "sha256": "352b36e8bfa724302f1a7bbdb249d76fb7c445190b435b4b6fb77455a80a5796"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-woodland-river-front.jpg",
+    "role": "source-reference",
+    "bytes": 3774058,
+    "sha256": "bda91ad9c23e6a133a7bf4b5af910e9b3e2d541e136a649fc621bc014eddecbb"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-woodland-river-three-quarter.jpg",
+    "role": "source-reference",
+    "bytes": 3868047,
+    "sha256": "be9e450876b9204380c4e0c46004306ab7f8a0da66eb53dca7c9594201d38d35"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-woodland-rock-wall.jpg",
+    "role": "source-reference",
+    "bytes": 3037915,
+    "sha256": "c93dc7ba3fd5393b37d3d4aa21bb2e5768023840dc8371d15b8eda1ef906448c"
+  },
+  {
+    "file": "assets/portraits/originals/vaibhav-saran-woodland-stairs-profile.jpg",
+    "role": "source-reference",
+    "bytes": 2387804,
+    "sha256": "1ed0c8dae5b120139c6182b1b54d6e9e76a4caaaeeb2ff6ac6af1d8d1239dc5d"
+  },
+  {
+    "file": "assets/references/f1/Gemini_Generated_Image_ar6ff7ar6ff7ar6f.jpg",
+    "role": "source-reference",
+    "bytes": 550603,
+    "sha256": "541ce95618d9eea308cd01e87a353d1f8e8c11e81e8fe3074285ae1bdfde2153"
+  },
+  {
+    "file": "assets/references/f1/Gemini_Generated_Image_b8k2cnb8k2cnb8k2.jpg",
+    "role": "source-reference",
+    "bytes": 712473,
+    "sha256": "dc2502e5cb167d78450ccbfa4a99ac3f04ab15a659e3bb1d01cf97db79a298cf"
+  },
+  {
+    "file": "assets/references/f1/Gemini_Generated_Image_p0ndaup0ndaup0nd.jpg",
+    "role": "source-reference",
+    "bytes": 452724,
+    "sha256": "d12af4fe7f13705aa9dd8bd8382b490ad437cf77bfb91cfd80dc182c11fe8177"
+  },
+  {
+    "file": "assets/references/f1/Gemini_Generated_Image_p9e0d7p9e0d7p9e0.jpg",
+    "role": "source-reference",
+    "bytes": 502086,
+    "sha256": "19f82d3b13aefb04a60c5e5841ca504b6c88e5bafe37022bd27606e8dcc603fe"
+  },
+  {
+    "file": "assets/references/f1/Gemini_Generated_Image_qbwm84qbwm84qbwm.jpg",
+    "role": "source-reference",
+    "bytes": 610515,
+    "sha256": "bd4bdbf9a152fc08896a845035981a30d5ecb7e56f17d32768e40614bd5dcfa2"
+  },
+  {
+    "file": "assets/references/f1/Neon AI Deployment Pipeline Circuit.png",
+    "role": "source-reference",
+    "bytes": 1876778,
+    "sha256": "ea97cf191f255b2bc7c2745dac63dfaf1c9a75135039820e91d0efad8ff92654"
+  },
+  {
+    "file": "assets/references/f1/Neon AI Formula One at Dusk.png",
+    "role": "source-reference",
+    "bytes": 1961875,
+    "sha256": "5dbb56f108ab7ebbbd93747f0cb361d250f5efc11821cd4e2b5a8aa9771d55ca"
+  },
+  {
+    "file": "assets/references/f1/Neon AI Racing Network.png",
+    "role": "source-reference",
+    "bytes": 2208375,
+    "sha256": "e6d16d3c4ef6aba3b68e9d0fccbfc946f1714bcb29a39515abfeef7bdd9dac66"
+  },
+  {
+    "file": "assets/references/f1/Neon Racing Analytics Command Center.png",
+    "role": "source-reference",
+    "bytes": 1742644,
+    "sha256": "a5d096fb1c591d5747a345fb519d31bdd219c1d2c84e4924171c575a3f0466d0"
+  },
+  {
+    "file": "assets/references/f1/Neon Racing Analytics Pipeline.png",
+    "role": "source-reference",
+    "bytes": 1774708,
+    "sha256": "2cfbffbb27fc6323ec2ad559a120a8840b7cf95c307e8dca4ea7b9e6f50746ee"
+  },
+  {
+    "file": "assets/references/stockpilot/Gemini_Generated_Image_314jhv314jhv314j.jpg",
+    "role": "source-reference",
+    "bytes": 452010,
+    "sha256": "883158a03a470d2d65c0fba054fcad46157dfcf7140a02ea6b31d5ff2fa05be1"
+  },
+  {
+    "file": "assets/references/stockpilot/Gemini_Generated_Image_907knt907knt907k.jpg",
+    "role": "source-reference",
+    "bytes": 510548,
+    "sha256": "bb691004402a74d1a2dbaec1afd21d9381f6d80481f4445b0a87559a4962278a"
+  },
+  {
+    "file": "assets/references/stockpilot/Gemini_Generated_Image_bwdj75bwdj75bwdj.jpg",
+    "role": "source-reference",
+    "bytes": 411261,
+    "sha256": "28a7ec5fe05c5a1f27d8b8c22d1a8e94ba16e3607d28c7b17007df6786f4d889"
+  },
+  {
+    "file": "assets/references/stockpilot/Gemini_Generated_Image_orbxy8orbxy8orbx.jpg",
+    "role": "source-reference",
+    "bytes": 397264,
+    "sha256": "0d71f67ffa77c260dfe35fce81c4db18eafb1d75b394979988fcd033695f6eae"
+  },
+  {
+    "file": "assets/references/stockpilot/Gemini_Generated_Image_ow0g65ow0g65ow0g.jpg",
+    "role": "source-reference",
+    "bytes": 394537,
+    "sha256": "d083f91ff5e05d594155eac6e2015c5eacb47661d2320d91a4168e4660877051"
+  },
+  {
+    "file": "assets/references/stockpilot/Gemini_Generated_Image_yvnumtyvnumtyvnu.jpg",
+    "role": "source-reference",
+    "bytes": 470163,
+    "sha256": "eaaa6ec8d30f0628ff86259f8282cfeec01379e33741b1826c047c683cb5673a"
+  },
+  {
+    "file": "assets/references/stockpilot/Gemini_Generated_Image_z75y9lz75y9lz75y.jpg",
+    "role": "source-reference",
+    "bytes": 412404,
+    "sha256": "c171fa0ac1c34d1005bc2bdacbdaf1225c726685511080ea372c186e11f83cda"
+  },
+  {
+    "file": "assets/references/stockpilot/Neon AI Architecture Flowchart.png",
+    "role": "source-reference",
+    "bytes": 1684705,
+    "sha256": "7370a2655808afe454d42d96938ac5c2cb753ab1a8b5e3863bd92f97576018a7"
+  },
+  {
+    "file": "assets/references/stockpilot/Neon AI Data Pipeline Architecture.png",
+    "role": "source-reference",
+    "bytes": 1689117,
+    "sha256": "4e30a6a603fb64b4dac8351da54a59acbab2bcf3d282610d285d7c9514b39439"
+  },
+  {
+    "file": "assets/references/stockpilot/Neon AI Dataflow_ Retrieve, Reason, Answer.png",
+    "role": "source-reference",
+    "bytes": 1678384,
+    "sha256": "988e47b7c2bb1a8fe96afdfada079722f794cbfae2b2b064fc34fe1a2a6ff514"
+  },
+  {
+    "file": "assets/references/stockpilot/Neon Brain, Flight, and Growth Badge.png",
+    "role": "source-reference",
+    "bytes": 1771302,
+    "sha256": "23bb0e0ccb3f55103f6c4ced58ce6642ae45d59ff1ac0c5d4ddf164ec3bd6151"
+  },
+  {
+    "file": "assets/references/stockpilot/Neon DevOps Cloud Pipeline.png",
+    "role": "source-reference",
+    "bytes": 1688255,
+    "sha256": "99ced76ac5ef70b06939b4b3c7a356b1dae1ecd0b698ab60319ff2f0aa888b83"
+  },
+  {
+    "file": "assets/references/stockpilot/Neon StockPilot AI Dashboard.png",
+    "role": "source-reference",
+    "bytes": 1495804,
+    "sha256": "f9f4496f38c8d35600ad22c6a35bc81291ca76abd3911adc56581aaf566edf11"
+  },
+  {
+    "file": "assets/references/stockpilot/StockPilot AI_ Neon Market Flight.png",
+    "role": "source-reference",
+    "bytes": 1700756,
+    "sha256": "eb4e1cc8d5ff97c7e1bfc0feddc0d3388caeee8e2a3c15897600806a6de9a61e"
+  },
+  {
+    "file": "docs/PortFolioWebsite.pdf",
+    "role": "source-reference",
+    "bytes": 3971204,
+    "sha256": "192e9f92940c6816ca902fb033231811d3e0706e8aef7e667dfd1680816da6ae"
+  },
+  {
+    "file": "docs/Profile.pdf",
+    "role": "source-reference",
+    "bytes": 65042,
+    "sha256": "c4fbad0ef88dc2d276046c9745a8e53f76d59b7ce96398bded272df52709e870"
+  },
+  {
+    "file": "docs/design/stitch-solid-reference.html",
+    "role": "source-reference",
+    "bytes": 11000,
+    "sha256": "a038039b1822ba1eb5993dd4445ff3c5ca9fe60356c8f55f6f72b5be502fdd82"
+  },
+  {
+    "file": "public/documents/Green-CRISP-ML-Q-Poster.pdf",
+    "role": "runtime",
+    "bytes": 569250,
+    "sha256": "486582eafe5a17bff98623ab50f9877c0762834f9b3eec7d0f47a2e9caf9294c"
+  },
+  {
+    "file": "public/favicon.svg",
+    "role": "runtime",
+    "bytes": 273,
+    "sha256": "13393ccde520ecf0566d7f356b52d77a284467187b39e1b51caa7897c2879266"
+  },
+  {
+    "file": "public/fonts/Inter-LICENSE.txt",
+    "role": "runtime",
+    "bytes": 4380,
+    "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+  },
+  {
+    "file": "public/fonts/Newsreader-OFL.txt",
+    "role": "runtime",
+    "bytes": 4394,
+    "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8"
+  },
+  {
+    "file": "public/fonts/inter-variable.woff2",
+    "role": "runtime",
+    "bytes": 48256,
+    "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+  },
+  {
+    "file": "public/fonts/newsreader-italic-variable.woff2",
+    "role": "runtime",
+    "bytes": 146872,
+    "sha256": "5dfcd10d24af8c82927ba57f7983dd997f7b200594c09c35a1b1ed9fc4597506"
+  },
+  {
+    "file": "public/fonts/newsreader-variable.woff2",
+    "role": "runtime",
+    "bytes": 132000,
+    "sha256": "6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101"
+  },
+  {
+    "file": "public/images/portraits/vaibhav-saran-beige-suit-smile.webp",
+    "role": "runtime",
+    "bytes": 45054,
+    "sha256": "97fcb98e6b39f182f3b83ca991097c165cbfaa00da7f236d7b71cea3004357ad",
+    "source": "assets/portraits/originals/vaibhav-saran-beige-suit-smile.jpg"
+  },
+  {
+    "file": "public/images/portraits/vaibhav-saran-woodland-river-front.webp",
+    "role": "runtime",
+    "bytes": 826862,
+    "sha256": "57258e064104e1bc1e96a59069cdb54f965342e9b00da8c8c8848c0c16a1707b",
+    "source": "assets/portraits/originals/vaibhav-saran-woodland-river-front.jpg"
+  },
+  {
+    "file": "public/images/work/automation-editorial-v2.webp",
+    "role": "runtime",
+    "bytes": 163436,
+    "sha256": "54a1cabbf44d1341f67722b6afda0bf35ba0bfc9e20996ea08dc472c9a86d9a6",
+    "source": "assets/artwork/automation-editorial-v2.png"
+  },
+  {
+    "file": "public/images/work/f1-editorial-v2.webp",
+    "role": "runtime",
+    "bytes": 174830,
+    "sha256": "881517da8c61760a2dce7d8105d22589f0764456436d732fb64b278d199618b4",
+    "source": "assets/artwork/f1-editorial-v2.png"
+  },
+  {
+    "file": "public/images/work/green-crisp-editorial-v2.webp",
+    "role": "runtime",
+    "bytes": 252642,
+    "sha256": "8ed7d880d028cc3994c52f451fe0fa0993cc8d24cf36cee94c6482c3204b8da7",
+    "source": "assets/artwork/green-crisp-editorial-v2.png"
+  },
+  {
+    "file": "public/images/work/green-crisp-poster.webp",
+    "role": "runtime",
+    "bytes": 281672,
+    "sha256": "14ca1b74d8b77309a8f761f6ff12fbe9ec5a971dc24ef3232b4e499b1603b27a",
+    "source": "public/documents/Green-CRISP-ML-Q-Poster.pdf"
+  },
+  {
+    "file": "public/images/work/hand-sign-editorial-v3.webp",
+    "role": "runtime",
+    "bytes": 124708,
+    "sha256": "fb4d98444f245e86b09536b04f5e2b178710e96f98ba63a0b375d398b1101358",
+    "source": "assets/artwork/hand-sign-editorial-v3.png"
+  },
+  {
+    "file": "public/images/work/laptrack-editorial-v3.webp",
+    "role": "runtime",
+    "bytes": 137664,
+    "sha256": "437c107d0b67eee4e8e8933cc75ffd170541d5c068bb29e4f5e1699deed44875",
+    "source": "assets/artwork/laptrack-editorial-v3.png"
+  },
+  {
+    "file": "public/images/work/sepsis-editorial-v2.webp",
+    "role": "runtime",
+    "bytes": 247640,
+    "sha256": "e4ee258372be896a6b84203d3ac2996726527c8919522c0902c66d34e3731f42",
+    "source": "assets/artwork/sepsis-editorial-v2.png"
+  },
+  {
+    "file": "public/images/work/stockpilot-editorial-v2.webp",
+    "role": "runtime",
+    "bytes": 137436,
+    "sha256": "bd6904445c8b702bfbd5f73c6784c161747884c50ec066e675b446b4d54115c0",
+    "source": "assets/artwork/stockpilot-editorial-v2.png"
+  }
+]

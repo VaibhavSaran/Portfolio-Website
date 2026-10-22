@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_20 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_20" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_20');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // Procedural Rounded Triangular Prismatic Ribbon Frame with Open Central Aperture
+(function() {
+  const container = document.getElementById('sculpture-canvas-container');
+  if (!container) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isDarkModeInitial = document.documentElement.classList.contains('dark');
+
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
+  camera.position.set(0, 0, 14);
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+  container.appendChild(renderer.domElement);
+
+  // Generate synthetic high-dynamic environment cubemap / radiance for crisp reflective facets
+  const cubeRenderTarget = new THREE.WebGLCubeRenderTarget(256);
+  cubeRenderTarget.texture.type = THREE.HalfFloatType;
+  const cubeCamera = new THREE.CubeCamera(0.1, 50, cubeRenderTarget);
+
+  // Create an internal reflection studio environment
+  const envScene = new THREE.Scene();
+  const envGroup = new THREE.Group();
+  envScene.add(envGroup);
+
+  // Soft architectural light panels for reflections
+  const lightPanelGeo = new THREE.PlaneGeometry(12, 12);
+  const panelMat1 = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+  const panel1 = new THREE.Mesh(lightPanelGeo, panelMat1);
+  panel1.position.set(10, 15, 10);
+  panel1.lookAt(0, 0, 0);
+  envGroup.add(panel1);
+
+  const panelMat2 = new THREE.MeshBasicMaterial({ color: 0xcde8d6, side: THREE.DoubleSide });
+  const panel2 = new THREE.Mesh(lightPanelGeo, panelMat2);
+  panel2.position.set(-15, -5, -8);
+  panel2.lookAt(0, 0, 0);
+  envGroup.add(panel2);
+
+  const panelMat3 = new THREE.MeshBasicMaterial({ color: 0x93b59d, side: THREE.DoubleSide });
+  const panel3 = new THREE.Mesh(new THREE.PlaneGeometry(20, 8), panelMat3);
+  panel3.position.set(0, -18, 5);
+  panel3.lookAt(0, 0, 0);
+  envGroup.add(panel3);
+
+  cubeCamera.update(renderer, envScene);
+
+  // Master group for the sculptural geometric figure
+  const masterSculpture = new THREE.Group();
+  scene.add(masterSculpture);
+
+  // BUILD PROCEDURAL ROUNDED TRIANGULAR PRISMATIC RIBBON (3 broad folded facets, open central hole)
+  // Closed 3D CatmullRomCurve3 forming a rounded equilateral triangle in XY with gentle architectural depth twist
+  const triRadius = 3.8;
+  const points = [];
+  const numControlPoints = 24;
+  for (let i = 0; i < numControlPoints; i++) {
+    const theta = (i / numControlPoints) * Math.PI * 2;
+    // Morph circle into equilateral rounded triangle: r(theta) = R * (1 + 0.32 * cos(3 * theta))
+    const r = triRadius * (1.0 + 0.28 * Math.cos(3 * theta - Math.PI / 2));
+    const x = Math.cos(theta) * r;
+    const y = Math.sin(theta) * r;
+    // Subtle architectural 3D undulation along the perimeter
+    const z = Math.sin(3 * theta) * 0.45;
+    points.push(new THREE.Vector3(x, y, z));
+  }
+  const splinePath = new THREE.CatmullRomCurve3(points, true, 'centripetal');
+
+  // Cross section: Broad prismatic rectangular facet with bevels / curved edges
+  const facetWidth = 1.15;
+  const facetThickness = 0.42;
+  const shape = new THREE.Shape();
+  const hw = facetWidth / 2;
+  const ht = facetThickness / 2;
+  const rad = 0.12;
+
+  shape.moveTo(-hw + rad, -ht);
+  shape.lineTo(hw - rad, -ht);
+  shape.quadraticCurveTo(hw, -ht, hw, -ht + rad);
+  shape.lineTo(hw, ht - rad);
+  shape.quadraticCurveTo(hw, ht, hw - rad, ht);
+  shape.lineTo(-hw + rad, ht);
+  shape.quadraticCurveTo(-hw, ht, -hw, ht - rad);
+  shape.lineTo(-hw, -ht + rad);
+  shape.quadraticCurveTo(-hw, -ht, -hw + rad, -ht);
+
+  const extrudeSettings = {
+    steps: 220,
+    bevelEnabled: true,
+    bevelThickness: 0.08,
+    bevelSize: 0.06,
+    bevelSegments: 4,
+    extrudePath: splinePath
+  };
+
+  const ribbonGeometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+  ribbonGeometry.computeVertexNormals();
+
+  // Materials: Smoky Chrome / Glass with Restrained Olive/Forest Tint
+  // Light mode material (Smoky chrome/glass with forest reflection)
+  const lightSculptureMat = new THREE.MeshPhysicalMaterial({
+    color: 0xe6ebe5,
+    emissive: 0x14201a,
+    emissiveIntensity: 0.12,
+    metalness: 0.82,
+    roughness: 0.16,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.1,
+    transmission: 0.35,
+    thickness: 1.2,
+    ior: 1.54,
+    reflectivity: 0.95,
+    envMap: cubeRenderTarget.texture,
+    envMapIntensity: 1.6
+  });
+
+  // Dark mode material (Deep olive glass / smoky lustrous chrome)
+  const darkSculptureMat = new THREE.MeshPhysicalMaterial({
+    color: 0x223528,
+    emissive: 0x112117,
+    emissiveIntensity: 0.28,
+    metalness: 0.88,
+    roughness: 0.14,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.08,
+    transmission: 0.42,
+    thickness: 1.6,
+    ior: 1.62,
+    reflectivity: 0.98,
+    envMap: cubeRenderTarget.texture,
+    envMapIntensity: 2.2
+  });
+
+  const ribbonMesh = new THREE.Mesh(ribbonGeometry, isDarkModeInitial ? darkSculptureMat : lightSculptureMat);
+  masterSculpture.add(ribbonMesh);
+
+  // Inner beveled aperture accent ring (prismatic bevel line catching lighting highlights)
+  const innerApertureGeo = new THREE.TorusGeometry(2.1, 0.035, 16, 90);
+  const innerApertureMat = new THREE.MeshStandardMaterial({
+    color: 0x5a8268,
+    metalness: 0.95,
+    roughness: 0.2,
+    envMap: cubeRenderTarget.texture
+  });
+  const innerApertureMesh = new THREE.Mesh(innerApertureGeo, innerApertureMat);
+  innerApertureMesh.rotation.x = Math.PI * 0.1;
+  masterSculpture.add(innerApertureMesh);
+
+  // Scene Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+
+  const mainLight = new THREE.DirectionalLight(0xf4f9f4, 1.4);
+  mainLight.position.set(8, 12, 10);
+  scene.add(mainLight);
+
+  const forestRimLight = new THREE.DirectionalLight(0x356346, 1.2);
+  forestRimLight.position.set(-10, -6, -6);
+  scene.add(forestRimLight);
+
+  const bottomFill = new THREE.DirectionalLight(0xdbe6dc, 0.6);
+  bottomFill.position.set(0, -12, 8);
+  scene.add(bottomFill);
+
+  // Dynamic Theme Switching Listener
+  window.updateSculptureTheme = function(isDark) {
+    ribbonMesh.material = isDark ? darkSculptureMat : lightSculptureMat;
+    ambientLight.intensity = isDark ? 0.6 : 0.85;
+    mainLight.intensity = isDark ? 1.6 : 1.35;
+    renderer.toneMappingExposure = isDark ? 1.25 : 1.1;
+  };
+
+  // Spatial alignment: centered behind editorial text, angled to reveal the open central triangular aperture
+  masterSculpture.position.set(2.2, 0.3, 0);
+  masterSculpture.rotation.set(0.2, -0.35, 0.15);
+
+  let mouseX = 0, mouseY = 0;
+  let targetRotX = 0.2, targetRotY = -0.35;
+  let scrollY = 0, currentScroll = 0;
+
+  function onMouseMove(e) {
+    if (prefersReducedMotion) return;
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 1.2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 1.2;
+  }
+
+  function onScroll() {
+    scrollY = window.pageYOffset || document.documentElement.scrollTop;
+  }
+
+  function onResize() {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  }
+
+  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onResize);
+
+  const clock = new THREE.Clock();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    if (!prefersReducedMotion) {
+      targetRotX += (mouseY * 0.35 - targetRotX + 0.2) * 0.04;
+      targetRotY += (mouseX * 0.45 - targetRotY - 0.35) * 0.04;
+
+      currentScroll += (scrollY - currentScroll) * 0.06;
+
+      // Calculate total page scroll height for seamless looping trajectory
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      // Normalized progress [0, 1] across entire page
+      const progress = (currentScroll % maxScroll) / maxScroll;
+
+      // FINITE SCROLL PATH: Camera moves toward and subtly enters/frames through the central triangular opening
+      // As user scrolls through Experience, Projects, Research, About, Endorsements, Contact:
+      // Sculpture rotates to present different facets, moves horizontally to balance editorial columns
+      const sectionPhase = progress * Math.PI * 2; // seamless loop phase
+
+      // X position moves between right hero side (2.2), centering (0.0) in dense research, then left (-1.8)
+      masterSculpture.position.x = 1.4 * Math.cos(sectionPhase) + 0.8;
+      masterSculpture.position.y = 0.3 + Math.sin(sectionPhase * 1.5) * 0.8;
+
+      // Z depth advances smoothly into the central aperture (camera approaches close to the hole)
+      // Range: from 0 (background hero) to 4.5 (camera looks right through the open triangular aperture)
+      const apertureZoom = Math.sin(progress * Math.PI) * 4.8;
+      masterSculpture.position.z = apertureZoom - (progress > 0.85 ? (progress - 0.85) * 15 : 0);
+
+      // Facet presentation: Sculpture smoothly twists on X, Y, Z to reveal different reflective facets
+      masterSculpture.rotation.x = targetRotX + Math.sin(t * 0.15 + sectionPhase) * 0.25;
+      masterSculpture.rotation.y = targetRotY + (t * 0.06) + sectionPhase * 0.8;
+      masterSculpture.rotation.z = 0.15 + Math.cos(sectionPhase) * 0.35;
+
+      // Subtly spin the inner aperture highlight
+      innerApertureMesh.rotation.z = t * 0.12;
+    } else {
+      masterSculpture.position.set(2.0, 0.2, 0);
+      masterSculpture.rotation.set(0.2, -0.35, 0.15);
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+})();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_20 -->
+</body>
+</html>
+

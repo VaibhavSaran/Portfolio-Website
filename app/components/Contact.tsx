@@ -1,130 +1,135 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { Calendar, CheckCircle, Github, Linkedin, Mail, Send } from "lucide-react";
-import { useRef, useState } from "react";
-import { resumeData } from "../data/resume";
+import { useState } from "react";
+import { ArrowUpRight, Send, CheckCircle, Linkedin } from "lucide-react";
+import { site } from "../data/site";
 
 export default function Contact() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.12 });
-  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormStatus("sending");
-
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const body = new FormData(form);
+    setStatus("sending");
     try {
-      const response = await fetch("https://formspree.io/f/xeeprnpp", {
+      const response = await fetch(site.contactEndpoint, {
         method: "POST",
-        body: new FormData(e.currentTarget),
+        body,
         headers: { Accept: "application/json" },
       });
-
-      if (!response.ok) throw new Error("Form submission failed");
-      setFormStatus("success");
-      e.currentTarget.reset();
+      if (!response.ok) throw new Error("Submission failed");
+      form.reset();
+      setStatus("success");
     } catch {
-      setFormStatus("error");
+      setStatus("error");
     }
-  };
-
+  }
   return (
-    <section id="contact" ref={ref} className="py-24">
-      <div className="section-shell">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55 }}
-          className="grid gap-6 lg:grid-cols-[0.78fr_1fr]"
-        >
-          <div className="noise-panel border border-border p-6 md:p-8">
-            <p className="section-kicker">Contact</p>
-            <h2 className="section-title">Reach out when the role needs builders who can ship.</h2>
-            <p className="section-copy">
-              I am open to AI Engineer, ML Engineer, LLM/GenAI Engineer, MLOps Engineer, and Applied Scientist roles.
-            </p>
-
-            <div className="mt-8 grid gap-3">
-              <a href={`mailto:${resumeData.basics.email}`} className="inline-flex items-center gap-3 border border-border bg-background/70 px-4 py-3 font-semibold hover:border-primary">
-                <Mail className="h-5 w-5 text-primary" />
-                {resumeData.basics.email}
-              </a>
-              <a href={`https://${resumeData.basics.links.linkedin}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-border bg-background/70 px-4 py-3 font-semibold hover:border-primary">
-                <Linkedin className="h-5 w-5 text-primary" />
-                linkedin.com/in/vaibhav-saran
-              </a>
-              <a href={`https://${resumeData.basics.links.github}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-border bg-background/70 px-4 py-3 font-semibold hover:border-primary">
-                <Github className="h-5 w-5 text-primary" />
-                github.com/VaibhavSaran
-              </a>
-              <a href="https://calendly.com/vaibhavsaran8/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-border bg-primary px-4 py-3 font-bold text-primary-foreground hover:opacity-90">
-                <Calendar className="h-5 w-5" />
-                Schedule a call
-              </a>
+    <section id="contact" className="contact-section">
+      <div className="section-shell section-block contact-layout">
+        <div className="contact-copy">
+          <p className="eyebrow">06 / START A CONVERSATION</p>
+          <h2>
+            Something interesting
+            <br />
+            on your <em>mind?</em>
+          </h2>
+          <p>
+            A team to join. A problem to untangle. An idea worth exploring. I’d
+            love to hear about it.
+          </p>
+          <a className="contact-email" href={`mailto:${site.email}`}>
+            {site.email}
+            <ArrowUpRight size={17} />
+          </a>
+          <div className="contact-secondary">
+            <a
+              className="text-link"
+              href={site.calendar}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Schedule a call <ArrowUpRight size={14} />
+            </a>
+            <a
+              className="text-link"
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <Linkedin size={15} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+        {status === "success" ? (
+          <div className="form-message" role="status">
+            <CheckCircle size={26} />
+            <h3>Message sent. Thank you.</h3>
+            <p>I’ll get back to you soon.</p>
+            <button className="text-link" onClick={() => setStatus("idle")}>
+              Send another message <ArrowUpRight size={14} />
+            </button>
+          </div>
+        ) : (
+          <form
+            className="contact-form"
+            onSubmit={submit}
+            aria-label="Contact Vaibhav"
+          >
+            <div className="form-row">
+              <label>
+                Your name
+                <input
+                  autoComplete="name"
+                  name="name"
+                  placeholder="Alex Morgan"
+                  required
+                  maxLength={120}
+                />
+              </label>
+              <label>
+                Email address
+                <input
+                  autoComplete="email"
+                  name="email"
+                  type="email"
+                  placeholder="alex@company.com"
+                  required
+                  maxLength={254}
+                />
+              </label>
             </div>
-          </div>
-
-          <div className="quiet-card p-6 md:p-8">
-            {formStatus === "success" ? (
-              <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
-                <CheckCircle className="h-12 w-12 text-accent" />
-                <p className="mt-4 text-2xl font-semibold">Message sent.</p>
-                <p className="mt-2 text-muted-foreground">I will get back to you soon.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="grid gap-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <label className="grid gap-2 text-sm font-semibold">
-                    Name
-                    <input
-                      name="name"
-                      type="text"
-                      required
-                      placeholder="Your name"
-                      className="min-h-12 border border-border bg-background px-4 text-foreground placeholder:text-muted-foreground/70"
-                    />
-                  </label>
-                  <label className="grid gap-2 text-sm font-semibold">
-                    Email
-                    <input
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="you@company.com"
-                      className="min-h-12 border border-border bg-background px-4 text-foreground placeholder:text-muted-foreground/70"
-                    />
-                  </label>
-                </div>
-                <label className="grid gap-2 text-sm font-semibold">
-                  Message
-                  <textarea
-                    name="message"
-                    required
-                    rows={8}
-                    placeholder="Tell me about the role, team, or problem space."
-                    className="resize-none border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/70"
-                  />
-                </label>
-
-                <button
-                  type="submit"
-                  disabled={formStatus === "sending"}
-                  className="inline-flex min-h-12 items-center justify-center gap-2 bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {formStatus === "sending" ? "Sending..." : "Send message"}
-                  <Send className="h-4 w-4" />
-                </button>
-
-                {formStatus === "error" && (
-                  <p className="text-sm font-semibold text-red-500">
-                    Something went wrong. Please email me directly at {resumeData.basics.email}.
-                  </p>
-                )}
-              </form>
+            <label>
+              What are you thinking?
+              <textarea
+                name="message"
+                rows={6}
+                required
+                maxLength={5000}
+                placeholder="A little about your team, idea, or opportunity…"
+              />
+            </label>
+            <button
+              className="button button-dark"
+              type="submit"
+              disabled={status === "sending"}
+            >
+              {status === "sending" ? "Sending…" : "Send message"}
+              <Send size={14} />
+            </button>
+            {status === "error" && (
+              <p className="form-message form-error" role="alert">
+                Your message couldn’t be sent. Please try again or{" "}
+                <a href={`mailto:${site.email}`}>email me directly</a>.
+              </p>
             )}
-          </div>
-        </motion.div>
+            <p className="form-note">
+              Your message is delivered securely via Formspree.
+            </p>
+          </form>
+        )}
       </div>
     </section>
   );

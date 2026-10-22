@@ -47,4 +47,5 @@ github-actions-key.json
 # Ignore .env files
 .env
 .env.local
-.env.example
+/.firebase/
+/tmp/

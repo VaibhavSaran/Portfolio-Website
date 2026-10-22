@@ -1,15 +1,17 @@
+// Shared factual content for the portfolio and its assistant.
 export const resumeData = {
   basics: {
     name: "Vaibhav Saran",
-    title: "Agentic AI Engineer · LLM Systems · Production ML · IEEE ICMLA 2025",
-    summary: "MS in Artificial Intelligence from SUNY Buffalo (Dec 2025). Published research on attention-based offline RL for sepsis treatment (IEEE ICMLA 2025). Building production LLM and multi-agent AI systems from research to deployment.",
+    title: "AI Engineer & Applied ML Researcher",
+    summary:
+      "AI engineer building and deploying production agentic systems, enterprise diagnostic skills, autonomous race-intelligence pipelines, and interpretable clinical RL frameworks. I connect agentic AI, data engineering, and MLOps, with research in offline RL and sustainable machine learning.",
     location: "Naperville, Chicago, United States",
     email: "vaibhavsaran8@gmail.com",
     phone: null,
     links: {
       linkedin: "www.linkedin.com/in/vaibhav-saran",
-      github: "github.com/VaibhavSaran"
-    }
+      github: "github.com/VaibhavSaran",
+    },
   },
   topSkills: [
     "LangChain",
@@ -18,21 +20,30 @@ export const resumeData = {
     "Agentic AI development",
     "Python",
   ],
-  languages: [
-    "English (Native or Bilingual)"
-  ],
+  languages: ["English (Native or Bilingual)"],
   experience: [
     {
-      company: "University at Buffalo - Artificial Intelligence and Data Science",
-      role: "Research Assistant",
-      dates: "October 2024 - Present",
-      duration: "1 year 3 months",
-      location: "Buffalo, New York, United States",
+      company: "Trek Health",
+      role: "AI/ML Engineering Intern",
+      dates: "August 2026 – Present",
+      duration: "",
+      location: "San Mateo, CA",
       bullets: [
-        "Conducted research on optimizing sepsis treatment using reinforcement learning and custom attention mechanisms.",
-        "Collaborated as co-author on the above paper accepted at an IEEE conference (ICMLA), showcasing novel approaches.",
-        "Developed a custom AI workflow for Green-AI Labs, focusing on resource consumption profiling and carbon footprint reduction."
-      ]
+        "Cut error-resolution time by 70% for sales teams and customers by deploying a diagnostic skill that traces failed agent runs to priority-ranked root causes, using an evidence-bundle query and mandatory sub-agent drilldown.",
+        "Improved response time by 87% and reduced model calls by 38% by migrating the platform’s LangGraph orchestration to a REST API architecture, reducing infrastructure costs by 42%.",
+      ],
+    },
+    {
+      company: "Green AI Labs, University at Buffalo",
+      role: "Research Intern",
+      dates: "January 2025 – August 2026",
+      duration: "",
+      location: "Buffalo, NY",
+      bullets: [
+        "Built an LLM-grounded decision-support framework combining retrieved clinical knowledge with an ensemble offline RL, XGBoost, and TabNet policy over 874K ICU records.",
+        "Achieved 83% treatment accuracy in research evaluation, a 23 percentage-point gain over the BCQ baseline.",
+        "Built an admission-time risk-stratification module using HDBSCAN and UMAP over 27,799 patient stays, classifying cases into three validated mortality-risk tiers within minutes to flag high-risk cases for physician review.",
+      ],
     },
     {
       company: "Innomatics Research Labs",
@@ -41,10 +52,10 @@ export const resumeData = {
       duration: "1 year 6 months",
       location: "Hyderabad, Telangana, India",
       bullets: [
-        "Mentored over 150 learners as a Data Science Coach with a 4.7/5 satisfaction score, providing training in advanced data science skills in both live offline and online mode.",
-        "Delivered 12 production-ready projects including object detection, image classification, and sentiment analysis for learners across 7 countries.",
-        "Enhanced 200 ML projects, improving model accuracy by 12% and increasing placement rates by 5% through performance optimization guidance."
-      ]
+        "Validated a price-aggregation proof of concept for Amazon, BestBuy, and Flipkart, collecting 5,000+ listings through BeautifulSoup and Selenium with automated weekly refreshes and stress-testing under simulated production-scale conditions.",
+        "Normalized multi-source data into 12 structured attributes and built a distributed PySpark ETL pipeline into PostgreSQL, enabling unified CRUD and cross-brand price analytics.",
+        "Mentored 150+ learners across seven countries with a 4.7/5 satisfaction rating.",
+      ],
     },
     {
       company: "Hacktoberfest",
@@ -54,8 +65,8 @@ export const resumeData = {
       location: "Online",
       bullets: [
         "Successfully merged 5 pull requests in the repository DSA and data science by parikshitsen.",
-        "Contributed programs in C++ and Python, and created separate channels for machine learning and deep learning."
-      ]
+        "Contributed programs in C++ and Python, and created separate channels for machine learning and deep learning.",
+      ],
     },
     {
       company: "Hacktoberfest",
@@ -65,8 +76,8 @@ export const resumeData = {
       location: "Online",
       bullets: [
         "Successfully contributed in Hacktoberfest 2021 and was able to get 4 pull requests merged.",
-        "Started a repository for beginners to open source so that they could also contribute."
-      ]
+        "Started a repository for beginners to open source so that they could also contribute.",
+      ],
     },
     {
       company: "CipherSchools",
@@ -76,8 +87,8 @@ export const resumeData = {
       location: "Online",
       bullets: [
         "Part of 45 days training program to learn about Deep Learning.",
-        "Worked on a project to translate hand signs to text for mute people using object detection as final project submission."
-      ]
+        "Worked on a project to translate hand signs to text for mute people using object detection as final project submission.",
+      ],
     },
     {
       company: "WsCube Tech",
@@ -85,9 +96,7 @@ export const resumeData = {
       dates: "January 2021 - February 2021",
       duration: "2 months",
       location: "Jodhpur, Rajasthan, India",
-      bullets: [
-        "Trainee for 45 days learning Python programming language."
-      ]
+      bullets: ["Trainee for 45 days learning Python programming language."],
     },
     {
       company: "AIESEC in India",
@@ -97,8 +106,8 @@ export const resumeData = {
       location: "Jodhpur, Rajasthan, India",
       bullets: [
         "Worked as Corporate Exchange Manager for 1 year, bringing international interns to clients of AIESEC in Jodhpur.",
-        "Was the best performing member in the local chapter at end of term."
-      ]
+        "Was the best performing member in the local chapter at end of term.",
+      ],
     },
     {
       company: "AIESEC in India",
@@ -107,8 +116,8 @@ export const resumeData = {
       duration: "1 month",
       location: "Jodhpur, Rajasthan, India",
       bullets: [
-        "Part of team responsible for hiring new talent for AIESEC in Jodhpur."
-      ]
+        "Part of team responsible for hiring new talent for AIESEC in Jodhpur.",
+      ],
     },
     {
       company: "Hacktoberfest",
@@ -118,8 +127,8 @@ export const resumeData = {
       location: "Online",
       bullets: [
         "Started Open Source Journey with Hacktoberfest 2020, achieving a total of 9 successful pull requests.",
-        "Repositories contributed to: github.com/bansalkanav/SOLVING_200_LEETCODE_QUESTIONS, github.com/Shashank9928/5th-SEM-LAB, github.com/parikshitsen/Python-, github.com/rajatgupta300557/Python_start"
-      ]
+        "Repositories contributed to: github.com/bansalkanav/SOLVING_200_LEETCODE_QUESTIONS, github.com/Shashank9928/5th-SEM-LAB, github.com/parikshitsen/Python-, github.com/rajatgupta300557/Python_start",
+      ],
     },
     {
       company: "CipherSchools",
@@ -128,81 +137,108 @@ export const resumeData = {
       duration: "2 months",
       location: "Chandigarh, India",
       bullets: [
-        "Trained for 45 days learning Machine Learning using Python, awarded 5 star at end of training."
-      ]
-    }
+        "Trained for 45 days learning Machine Learning using Python, awarded 5 star at end of training.",
+      ],
+    },
   ],
   projects: [
     {
       title: "StockPilot AI — Agentic RAG Stock Analysis Agent",
-      dates: "February 2026 - March 2026",
+      dates: "February 2026 – August 2026",
       associated: null,
       bullets: [
-        "Built an agentic RAG assistant answering plain-English questions on live stock data and news across stock tickers, using a supervisor-based multi-agent architecture (News RAG, Stock Data RAG, Stock Charts RAG) powered by Claude Sonnet and Gemini embeddings.",
-        "Designed a formal RAG evaluation pipeline using the RAGAS framework (faithfulness, answer relevancy, context precision, context recall) with a custom 15-question test dataset grounded in real production data, achieving 0.624 overall score and 0.754 faithfulness with Claude Sonnet as judge LLM.",
-        "Implemented hybrid search combining BM25 keyword matching with vector similarity via Reciprocal Rank Fusion, improving Answer Relevancy from 0.673 to 0.736. Used per-question RAGAS breakdown to diagnose a supervisor routing bug causing 0.0 faithfulness scores on misrouted queries — directly driving prioritization of the fix.",
-        "Built a data quality pipeline that identified and removed 331 garbage articles (11.4% of corpus) including consent pages, malformed URLs, and duplicate content, improving retrieval quality at the source. Automated multi-source data sync across PostgreSQL, MongoDB, and ChromaDB using Apache Airflow DAGs, containerized with Docker on AWS EC2 with GitHub Actions CI/CD."
+        "Built a supervisor-based multi-agent research system combining live stock data, news, and charts through hybrid retrieval, with responses under 10 seconds.",
+        "Added a prompt-injection guardrail and an 11.4% data-quality filter. Evaluated retrieval with RAGAS: 0.624 overall, 0.754 faithfulness, and answer relevancy improved from 0.673 to 0.736.",
+        "Extended analysis with seven-day Prophet forecasting and archived 3,800+ cold records to AWS S3 with DuckDB fallback. Airflow orchestrates PostgreSQL, MongoDB, and ChromaDB.",
       ],
-      skills: ["LangGraph", "Claude Sonnet", "RAG", "RAGAS", "ChromaDB", "FB Prophet", "Apache Airflow", "FastAPI", "Docker", "AWS EC2", "GitHub Actions"],
+      skills: ["LangGraph", "RAGAS", "Airflow", "FastAPI", "AWS EC2", "DuckDB"],
       links: {
         liveDemo: "https://stockpilot.vaibhavsaran.com/",
-        github: "https://github.com/VaibhavSaran/Stock-Pilot-AI"
+        github: "https://github.com/VaibhavSaran/Stock-Pilot-AI",
       },
-      contributors: null
+      contributors: null,
     },
     {
       title: "F1 Primus AI — Autonomous Pre-Race Prediction Pipeline",
       dates: "January 2026 - February 2026",
       associated: null,
       bullets: [
-        "Built an end-to-end agentic AI system that autonomously generates pre-race intelligence reports for the 2026 Formula 1 season.",
-        "Given a race round, the pipeline fetches real F1 telemetry via FastF1, race weekend weather via Open-Meteo, grid penalties and team news via Tavily AI search, and runs a Gradient Boosting ML model — all orchestrated by a LangGraph ReAct agent using Claude claude-sonnet-4.5 as the reasoning engine.",
-        "ML experiments tracked with MLflow (hyperparameters, MAE, model artifacts). Pipeline wrapped in a Prefect flow with task-level retry logic.",
-        "Streamlit UI containerised with Docker, deployed on GCP Cloud Run, automatically redeployed via GitHub Actions CI/CD on every push to main."
+        "Built an autonomous pre-race intelligence pipeline that brings weather, practice telemetry, news, and a Gradient Boosting lap-time model into a single report in under two minutes across 24 rounds.",
+        "A LangGraph ReAct agent reasons over FastF1, Open-Meteo, and Tavily sources; MLflow records offline experiments and Prefect handles orchestration and retries.",
+        "Containerized the Streamlit application with Docker, deployed it on GCP Cloud Run, and automated deployment with GitHub Actions.",
       ],
-      skills: ["LangGraph", "LangChain", "FastF1", "MLflow", "Prefect", "Docker", "GCP Cloud Run", "GitHub Actions"],
+      skills: [
+        "LangGraph",
+        "LangChain",
+        "FastF1",
+        "MLflow",
+        "Prefect",
+        "Docker",
+        "GCP Cloud Run",
+        "GitHub Actions",
+      ],
       links: {
-        liveDemo: "https://f1-primus-ai-214856382722.us-central1.run.app/",
-        github: "https://github.com/VaibhavSaran/F1-Primus-AI"
+        liveDemo: "https://f1primus.vaibhavsaran.com/",
+        github: "https://github.com/VaibhavSaran/F1-Primus-AI",
       },
-      contributors: null
+      contributors: null,
     },
     {
       title: "Job Search Automation Pipeline",
       dates: "March 2026 – Present",
       associated: null,
       bullets: [
-        "Built a live n8n automation workflow that scrapes LinkedIn, Indeed, and Glassdoor daily using an Apify actor, scoring each job posting via the Claude API (claude-sonnet-4-6) for fit against a target profile.",
-        "High-match roles are automatically routed to a dedicated Google Sheets tab with AI-generated fit scores and reasoning — eliminating manual job discovery entirely.",
-        "Stack: n8n (self-hosted), Apify, Claude API, Google Sheets API"
+        "Created a weekday 8 AM or manual n8n workflow that collects LinkedIn jobs through Apify, normalizes fields, and removes duplicate URLs.",
+        "Claude Sonnet 4.6 scores fit and provides resume suggestions. The pipeline logs 21 fields per job into Google Sheets, routing scores of 70 or above into High Matches while retaining All Jobs.",
+        "Processes 100 jobs per run, turning job discovery into a repeatable, inspectable pipeline.",
       ],
       skills: ["n8n", "Claude API", "Apify", "Google Sheets", "Automation"],
       links: {},
-      contributors: null
+      contributors: null,
     },
     {
       title: "Optimizing Sepsis Treatment With Reinforcement Learning",
       dates: "February 2025 - May 2025",
       associated: "University at Buffalo",
       award: "3rd Place — CSE Demo Days, SUNY Buffalo",
-      publication: "Accepted at IEEE ICMLA 2025 — \"Attention-Based Offline Reinforcement Learning and Clustering for Interpretable Sepsis Treatment\"",
+      publication: "IEEE ICMLA 2025 conference paper",
       bullets: [
-        "Built an interpretable sepsis treatment framework using offline RL with custom attention and LLaMA-3.2 for interpretation of actions, achieving 83% accuracy on MIMIC-III and e-ICU via a novel attention-based offline RL approach.",
-        "Deployed the complete framework in a secure local environment using Streamlit for UI, ensuring patient data privacy and compliance for clinical AI applications.",
-        "Implemented a clustering-driven risk stratification pipeline using HDBSCAN with UMAP, generating 124 clusters from ICU data and consolidating them into 3 clinically meaningful mortality-based risk categories (low, intermediate, high), effectively addressing the cold-start problem for new admissions.",
-        "Research contribution: synthetic data augmentation using VAE and diffusion models to address data sparsity in critical interventions. AWR-based agent with attention mechanisms for personalized treatment recommendations. LLM-based rationale generation providing clinicians with natural-language explanations."
+        "Developed an interpretable attention-based offline RL framework with clustering and LLM-generated rationale, evaluated on MIMIC-III and eICU cohorts.",
+        "The ensemble policy achieved 83% treatment accuracy over 874K ICU records. HDBSCAN and UMAP group 27,799 patient stays into three mortality-risk tiers.",
+        "Augmented underrepresented fluid and vasopressor examples with synthetic trajectories from diffusion models and a conditional VAE, addressing sparse intervention data during offline training.",
+        "Awarded third place at CSE Demo Days, University at Buffalo; the work developed into an IEEE ICMLA 2025 conference paper.",
       ],
-      skills: ["LangChain", "Reinforcement Learning", "HDBSCAN", "UMAP", "LLaMA", "Streamlit"],
+      skills: [
+        "LangChain",
+        "Reinforcement Learning",
+        "HDBSCAN",
+        "UMAP",
+        "LLaMA",
+        "Streamlit",
+      ],
       links: {
         demoVideo: "https://www.youtube.com/watch?v=Sna3q-Jr_jA",
-        github: "https://github.com/VaibhavSaran/Optimizing-Sepsis-Treatment-with-RL",
-        paperPdf: "https://arxiv.org/pdf/2601.14228"
+        github:
+          "https://github.com/VaibhavSaran/Optimizing-Sepsis-Treatment-with-RL",
+        paperPdf: "https://arxiv.org/pdf/2601.14228",
       },
       contributors: [
-        { name: "Punit Kumar (Lead Author)", github: "https://github.com/punit121", linkedin: "https://www.linkedin.com/in/punit121/" },
-        { name: "Vaibhav Saran (Second Author)", github: null, linkedin: null },
-        { name: "Divyesh Patel", github: "https://github.com/Divyesh230902", linkedin: "https://www.linkedin.com/in/thedivyeshpatel/" }
-      ]
+        {
+          name: "Punit Kumar (Lead Author)",
+          github: "https://github.com/punit121",
+          linkedin: "https://www.linkedin.com/in/punit121/",
+        },
+        {
+          name: "Vaibhav Saran (Second Author)",
+          github: null,
+          linkedin: null,
+        },
+        {
+          name: "Divyesh Patel",
+          github: "https://github.com/Divyesh230902",
+          linkedin: "https://www.linkedin.com/in/thedivyeshpatel/",
+        },
+      ],
     },
     {
       title: "Laptrack — Laptop Price Aggregator and Recommendation Engine",
@@ -212,81 +248,224 @@ export const resumeData = {
         "Built a robust ETL pipeline using PySpark to scrape, preprocess, and load extensive laptop data from Amazon, BestBuy, and Flipkart, ensuring seamless handling of diverse data formats. Dataset published on Kaggle.",
         "Developed a feature-rich aggregator application using Flask (backend) and ReactJS (frontend), enabling users to compare laptop buying options across multiple platforms.",
         "Implemented a content-based recommendation engine to suggest similar products, enhancing user engagement and providing tailored shopping experiences.",
-        "Designed and deployed machine learning models to predict laptop prices based on specifications and analyze pricing trends, integrating insights into an admin dashboard for informed decision-making."
+        "Designed and deployed machine learning models to predict laptop prices based on specifications and analyze pricing trends, integrating insights into an admin dashboard for informed decision-making.",
       ],
       skills: ["PySpark", "Hadoop", "Flask", "ReactJS", "Machine Learning"],
       links: {
         demoVideo: "https://www.youtube.com/watch?v=WnHhlB1WFgM",
-        kaggleDataset: "https://www.kaggle.com/datasets/vaibhavsaran/best-buy-amazon-flipkart-laptop-data",
-        github: "https://github.com/VaibhavSaran/PROJECT-LAPTRACK"
+        kaggleDataset:
+          "https://www.kaggle.com/datasets/vaibhavsaran/best-buy-amazon-flipkart-laptop-data",
+        github: "https://github.com/VaibhavSaran/PROJECT-LAPTRACK",
       },
       contributors: [
-        { name: "Shaurya Mathur", github: "https://github.com/ShauryaMathur", linkedin: "https://www.linkedin.com/in/shauryamathur27/" },
-        { name: "Yeswanth Chitturi", github: "https://github.com/s1th883", linkedin: "https://www.linkedin.com/in/yeswanth-chitturi/" }
-      ]
-    }
+        {
+          name: "Shaurya Mathur",
+          github: "https://github.com/ShauryaMathur",
+          linkedin: "https://www.linkedin.com/in/shauryamathur27/",
+        },
+        {
+          name: "Yeswanth Chitturi",
+          github: "https://github.com/s1th883",
+          linkedin: "https://www.linkedin.com/in/yeswanth-chitturi/",
+        },
+      ],
+    },
+    {
+      title: "Hand Sign Detection — Real-Time Visual Communication",
+      dates: "Undergraduate major project",
+      associated: "JIET Group of Institutions",
+      bullets: [
+        "Built a real-time webcam detector for 10 custom hand signs using TensorFlow Object Detection and SSD MobileNet V2 FPNLite 320×320, connecting visual sign recognition to on-screen text.",
+        "Created a 300-image dataset by photographing personal examples of each sign and annotating bounding boxes with LabelImg. Used 240 images for training and 60 for testing.",
+        "Fine-tuned the pretrained detector for 10,000 training steps, then ran predictions on still images and live camera input with bounding boxes, sign labels, and confidence scores.",
+        "Organized data collection, training, evaluation, and inference in Jupyter notebooks and exported the frozen model. The custom vocabulary includes expressions such as “thank you,” “name,” “what,” “nice,” and “I love you.”",
+      ],
+      skills: ["Python", "TensorFlow", "SSD MobileNet", "LabelImg", "Jupyter"],
+      links: {
+        github:
+          "https://github.com/VaibhavSaran/Hand-Sign-Detection-with-Tensorflow-Object-Detection",
+      },
+      contributors: null,
+    },
   ],
+  research: {
+    greenCrisp: {
+      title: "Green CRISP-ML(Q): A Framework for Sustainable Machine Learning",
+      subtitle:
+        "Embedding sustainability into AI development through comprehensive environmental profiling",
+      authors: ["Vaibhav Saran", "Dr. Asif Imran (advisor)"],
+      venue:
+        "Poster, NY-BEST Annual Energy Storage Conference, 2025, Ithaca, NY",
+      overview:
+        "Extends CRISP-ML(Q) with sustainability checkpoints across all six stages of the ML lifecycle, bringing carbon budgets, resource profiling, and environmental trade-offs alongside model quality.",
+      checkpoints: [
+        "Business & data understanding",
+        "Data engineering",
+        "Model building & training",
+        "Model evaluation",
+        "Deployment",
+        "Monitoring & maintenance",
+      ],
+      architecture:
+        "A five-phase profiler combines Scalene and CodeCarbon: initialization, execution profiling, parallel monitoring, result aggregation, and output generation. Function decorators and context managers capture CPU, GPU, RAM, energy, and CO₂ measurements, exporting a 43-column dataset with session logs and performance summaries.",
+      experiment:
+        "Proof-of-concept evaluation: Neural Collaborative Filtering on MovieLens-20M, using an Intel Xeon Gold 6126 (48 cores), Quadro RTX 6000 GPU, and 187.4 GB RAM.",
+      findings: [
+        {
+          value: "93.5%",
+          label: "of measured CO₂ came from training",
+          detail: "114.60 g of the experiment’s 122.62 g total",
+        },
+        {
+          value: "8.57%",
+          label: "average GPU utilization during training",
+          detail: "An opportunity to improve acceleration and batch sizing",
+        },
+        {
+          value: "0.333",
+          label: "kWh total experiment energy",
+          detail: "Measured consumption, not a claimed energy saving",
+        },
+      ],
+      limitations:
+        "These are observations from one NCF/MovieLens-20M experiment, not measured reductions or a general benchmark. Validation across more AI domains and automated optimization recommendations are future work.",
+      skills: [
+        "Sustainable AI",
+        "Scalene",
+        "CodeCarbon",
+        "Environmental profiling",
+        "NCF",
+        "MovieLens-20M",
+      ],
+    },
+  },
   achievements: [
     {
       type: "award",
       title: "Winner — CSE Demo Days, SUNY Buffalo",
-      context: "Won at 3rd place for Optimizing Sepsis Treatment With Reinforcement Learning and clustering, which was further developed into a research paper accepted at IEEE ICMLA 2025.",
-      date: "2025"
+      context:
+        "Won at 3rd place for Optimizing Sepsis Treatment With Reinforcement Learning and clustering, which was further developed into a research paper accepted at IEEE ICMLA 2025.",
+      date: "2025",
     },
     {
       type: "publication",
       title: "Paper accepted at IEEE Conference (ICMLA 2025)",
-      context: "Attention-Based Offline Reinforcement Learning and Clustering for Interpretable Sepsis Treatment",
-      date: "2025"
+      context:
+        "Attention-Based Offline Reinforcement Learning and Clustering for Interpretable Sepsis Treatment",
+      date: "2025",
     },
     {
       type: "metric",
       title: "83% Accuracy on sepsis treatment prediction",
       value: 83,
-      context: "Using offline RL with custom attention on MIMIC-III and e-ICU datasets"
+      context:
+        "Using offline RL with custom attention on MIMIC-III and e-ICU datasets",
     },
     {
       type: "metric",
       title: "Mentored 150+ learners",
       value: 150,
-      context: "Data Science Coach at Innomatics Research Labs with 4.7/5 satisfaction score"
+      context:
+        "Data Science Coach at Innomatics Research Labs with 4.7/5 satisfaction score",
     },
     {
       type: "metric",
       title: "Delivered 12 production-ready projects",
       value: 12,
-      context: "Including object detection, image classification, and sentiment analysis for learners across 7 countries"
+      context:
+        "Including object detection, image classification, and sentiment analysis for learners across 7 countries",
     },
     {
       type: "research",
       title: "Green CRISP-ML(Q)",
-      context: "Developed comprehensive environmental profiling framework for sustainable AI development, reducing computational costs and carbon footprint in ML workflows.",
-      link: "https://drive.google.com/file/d/1ppyDC72qR3O5KgLZyQszFwrJ1i0rE3lx/view?usp=sharing"
+      context:
+        "Developed a six-stage sustainability framework with Scalene and CodeCarbon profiling. An NCF/MovieLens-20M experiment measured 0.333 kWh total energy and attributed 93.5% of CO₂ to training, identifying optimization opportunities.",
+      link: "/documents/Green-CRISP-ML-Q-Poster.pdf",
     },
     {
       type: "project",
       title: "1,000+ Articles · StockPilot AI",
-      context: "Indexed 1,000+ real-time financial news articles across 7 stock tickers using ChromaDB vector store and Apache Airflow DAGs — deployed live on AWS EC2.",
-      liveDemo: "http://3.209.133.64"
+      context:
+        "Indexed 1,000+ real-time financial news articles across 7 stock tickers using ChromaDB vector store and Apache Airflow DAGs — deployed live on AWS EC2.",
+      liveDemo: "https://stockpilot.vaibhavsaran.com/",
     },
     {
       type: "project",
       title: "Hand Sign Detection",
-      context: "Built an object detection system that detects hand signs and gives the meaning of sign as text in real time, enabling communication for mute individuals. Implemented using TensorFlow Object Detection.",
-      github: "https://github.com/VaibhavSaran/Hand-Sign-Detection-with-Tensorflow-Object-Detection"
-    }
+      context:
+        "Built an object detection system that detects hand signs and gives the meaning of sign as text in real time, enabling communication for mute individuals. Implemented using TensorFlow Object Detection.",
+      github:
+        "https://github.com/VaibhavSaran/Hand-Sign-Detection-with-Tensorflow-Object-Detection",
+    },
   ],
   skills: {
-    "AI & ML Frameworks": ["LangChain", "LangGraph", "LangSmith", "PyTorch", "Google ADK"],
-    "AI & ML Ops": ["Apache Airflow", "MLflow", "Prefect", "Docker", "CI/CD", "GitHub Actions"],
-    "Agentic AI & Tools": ["Agentic AI development", "Multi-Agent Systems", "RAG","Claude Code", "Google Gemini"],
-    "Cloud & Infrastructure": ["AWS EC2", "GCP Cloud Run", "Nginx", "FastAPI"],
-    "Databases & Vector Stores": ["SQLite", "PostgreSQL", "ChromaDB", "MongoDB"],
-    "Data Engineering": ["PySpark", "Hadoop", "FB Prophet"],
-    "Deep Learning": ["Reinforcement Learning", "HDBSCAN", "UMAP", "VAE", "GANs", "Transformers"],
-    "Programming Languages": ["Python", "C++", "C"],
-    "Frontend UI": ["Streamlit", "Flask"]
-    
+    "Agentic AI": [
+      "LangGraph",
+      "LangChain",
+      "LangSmith",
+      "RAG",
+      "Multi-Agent Systems",
+      "MCP",
+      "Claude API",
+      "OpenAI API",
+      "Gemini",
+      "Jev (TypeSafe AI)",
+    ],
+    "Machine learning": [
+      "PyTorch",
+      "scikit-learn",
+      "Hugging Face",
+      "Offline RL",
+      "XGBoost",
+      "HDBSCAN",
+      "UMAP",
+      "VAE",
+      "Diffusion Models",
+      "NLTK",
+      "spaCy",
+      "Speech/audio processing",
+    ],
+    "Data & infrastructure": [
+      "Python",
+      "C++",
+      "SQL",
+      "PySpark",
+      "Airflow",
+      "Prefect",
+      "PostgreSQL",
+      "MongoDB",
+      "ChromaDB",
+      "FAISS",
+      "DuckDB",
+      "Hadoop",
+      "Snowflake",
+      "Databricks",
+      "Microsoft Fabric",
+      "MySQL",
+      "SQLite",
+    ],
+    "Shipping & serving": [
+      "FastAPI",
+      "Docker",
+      "GitHub Actions",
+      "MLflow",
+      "AWS EC2 / S3",
+      "GCP Cloud Run",
+      "Nginx",
+      "Groq",
+      "Cerebras",
+      "vLLM",
+      "TensorRT",
+      "Git",
+      "Selenium",
+    ],
+    "Programming languages": ["Python", "C++", "C"],
+    "Sustainable ML": [
+      "Scalene",
+      "CodeCarbon",
+      "Energy & CO₂ profiling",
+      "CRISP-ML(Q)",
+    ],
   },
   education: [
     {
@@ -296,19 +475,19 @@ export const resumeData = {
       gpa: "3.7",
       highlights: [
         "Paper accepted at IEEE Conference (ICMLA)",
-        "Part of Green-AI Labs, optimizing AI Workflows and reducing cost and carbon footprints"
-      ]
+        "Part of Green-AI Labs, optimizing AI Workflows and reducing cost and carbon footprints",
+      ],
     },
     {
       institution: "JIET Group of Institutions",
       degree: "B.Tech in Computer Science",
-      dates: "2018-2022",
+      dates: "June 2022",
       gpa: "3.64",
       highlights: [
         "Began open-source contributions via Hacktoberfest, successfully merging pull requests across Python, C++, and Machine Learning repositories — marking the start of a consistent engineering practice.",
-        "Built a real-time Hand Sign Detection system using TensorFlow Object Detection API that captions hand signs as text, enabling communication for mute individuals — submitted as final major project."
-      ]
-    }
+        "Built a real-time Hand Sign Detection system using TensorFlow Object Detection API that captions hand signs as text, enabling communication for mute individuals — submitted as final major project.",
+      ],
+    },
   ],
   extra: [
     "Part of Green-AI Labs at University at Buffalo",
@@ -316,7 +495,7 @@ export const resumeData = {
     "Created separate channels in open source contributions during hacktober fest. The channels comprised of Python, C++, Machine Learning and Deep Learning so that new contributors to open source can easily find resources and contribute in simple issues and tasks.",
     {
       text: "Building a comprehensive learning roadmap repository covering the full journey from Python fundamentals to Generative AI, designed as a structured guide for aspiring AI practitioners.",
-      link: "https://github.com/VaibhavSaran/Artificial-Intelligence"
-    }
-  ]
+      link: "https://github.com/VaibhavSaran/Artificial-Intelligence",
+    },
+  ],
 };

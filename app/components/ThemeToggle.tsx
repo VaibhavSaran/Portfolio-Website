@@ -1,46 +1,39 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
+  const [dark, setDark] = useState(false);
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-    }
+    setDark(document.documentElement.dataset.theme === "dark");
+    const sync = (event: StorageEvent) => {
+      if (event.key !== "portfolio-theme") return;
+      const next = event.newValue === "dark";
+      document.documentElement.dataset.theme = next ? "dark" : "light";
+      setDark(next);
+    };
+    window.addEventListener("storage", sync);
+    return () => window.removeEventListener("storage", sync);
   }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-  };
-
+  function toggle() {
+    const next = !dark;
+    document.documentElement.dataset.theme = next ? "dark" : "light";
+    setDark(next);
+    try {
+      localStorage.setItem("portfolio-theme", next ? "dark" : "light");
+    } catch {
+      /* Theme works when storage is unavailable. */
+    }
+  }
   return (
-    <motion.button
-      onClick={toggleTheme}
-      className="fixed top-6 right-6 z-40 p-3 glass-card rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:shadow-xl"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      aria-label="Toggle theme"
+    <button
+      className="theme-toggle"
+      onClick={toggle}
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      title={dark ? "Switch to light mode" : "Switch to dark mode"}
     >
-      <motion.div
-        initial={false}
-        animate={{ rotate: theme === "dark" ? 0 : 180 }}
-        transition={{ duration: 0.3 }}
-      >
-        {theme === "dark" ? (
-          <Sun className="w-5 h-5 text-yellow-500" />
-        ) : (
-          <Moon className="w-5 h-5 text-indigo-500" />
-        )}
-      </motion.div>
-    </motion.button>
+      {dark ? <Sun size={18} /> : <Moon size={18} />}
+    </button>
   );
 }

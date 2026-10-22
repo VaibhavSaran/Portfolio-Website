@@ -1,5 +1,18 @@
 node_modules
 .next
 .git
-*.md
+.env*
+github-actions-key.json
+*.pem
+.agents
+.claude
+.codex
+graphify-out
+prompt
 docs
+f1 images
+stock images
+*.md
+tmp
+assets
+community

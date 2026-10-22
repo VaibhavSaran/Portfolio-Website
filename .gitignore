@@ -38,6 +38,7 @@ prompt/*
 
 #Ignoring claude and skills
 .claude/*
+.agents/
 graphify-out/*
 
 #Ignore Keys
@@ -46,7 +47,5 @@ github-actions-key.json
 # Ignore .env files
 .env
 .env.local
-.env.example
-
-# Ignore agents folder
-.agents/*
+/.firebase/
+/tmp/
